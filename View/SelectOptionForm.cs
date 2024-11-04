@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using POS_build.Model;
+using Coffee_Kiosk.Model;
 
-namespace POS_build.View
+namespace Coffee_Kiosk.View
 {
     public partial class SelectOptionForm : Form
     {

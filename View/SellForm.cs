@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 using Coffee_Kiosk.Repository;
-using POS_build.View;
+using Coffee_Kiosk.View;
 
 namespace Coffee_Kiosk
 {

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using POS_build.View;
-using POS_build.Model;
+using Coffee_Kiosk.View;
+using Coffee_Kiosk.Model;
 
 namespace Coffee_Kiosk
 {

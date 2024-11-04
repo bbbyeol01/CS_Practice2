@@ -1,4 +1,4 @@
-﻿namespace POS_build.View
+﻿namespace Coffee_Kiosk.View
 {
     partial class SelectOptionForm
     {

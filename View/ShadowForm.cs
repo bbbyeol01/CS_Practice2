@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POS_build.View
+namespace Coffee_Kiosk.View
 {
     public partial class ShadowForm : Form
     {

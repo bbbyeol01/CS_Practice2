@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POS_build.Model
+namespace Coffee_Kiosk.Model
 {
     public class Drink
     {
