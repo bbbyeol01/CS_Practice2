@@ -10,5 +10,6 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/entypo-license.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/windowsicons-license.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute(".gitignore")]
 
 

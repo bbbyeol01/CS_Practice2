@@ -202,6 +202,7 @@
   <ItemGroup>
     <Content Include="Resources\Entypo-license.txt" />
     <Content Include="Resources\WindowsIcons-license.txt" />
+    <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Resources\Icons.xaml">
