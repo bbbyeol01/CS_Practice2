@@ -17,11 +17,13 @@ namespace Coffee_Kiosk.View
     {
         Drink drink;
         MenuRepository menuRepository = new MenuRepository();
+        int selectDrinkPrice;
 
         public SelectOptionForm(Drink drink)
         {
             InitializeComponent();
             this.drink = drink;
+            this.selectDrinkPrice = drink.Price;
         }
 
         private void SelectOptionForm_Load(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace Coffee_Kiosk.View
             this.lbl_name.Text = drink.Name;
             this.pic_drink.Image = drink.DrinkImage;
             this.lbl_desc.Text = menuRepository.getDesc(drink.Idx);
+            this.lbl_totalPrice.Text = $"{drink.Price}원";
 
             List<string> types = menuRepository.getTypes(drink.Idx);
             DrinkTypeControl drinkType = new DrinkTypeControl();
@@ -47,21 +50,48 @@ namespace Coffee_Kiosk.View
 
             panel_type.Controls.Add(drinkType);
 
-            List<(string, string)> options = menuRepository.getOptions();
+            List<(string, int)> options = menuRepository.getOptions();
             int yOffset = 0;
             foreach(var (name, price) in options)
             {
-                DrinkOptionControl option = new DrinkOptionControl();
+
+                DrinkOption option = new DrinkOption();
                 option.Name = name;
-                option.Location = new Point(0, yOffset);
-                panel_option.Controls.Add(option);
-                yOffset += option.Height;
+                option.Price = price;
+
+                DrinkOptionControl optionControl = new DrinkOptionControl(option);
+                optionControl.Name = name;
+                optionControl.optionPlus += OptionPlus;
+                optionControl.optionMinus += OptionMinus;
+
+                optionControl.Location = new Point(0, yOffset);
+                panel_option.Controls.Add(optionControl);
+                yOffset += optionControl.Height;
             }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void OptionPlus(DrinkOption option)
+        {
+            selectDrinkPrice += option.Price;
+            drink.AddOption(option);
+            this.lbl_totalPrice.Text = (selectDrinkPrice).ToString();
+        }
+
+        public void OptionMinus(DrinkOption option)
+        {
+            if(option.Quantity == 1)
+            {
+                drink.DeleteOption(option);
+            }
+            selectDrinkPrice -= option.Price;
+            this.lbl_totalPrice.Text = (selectDrinkPrice).ToString();
+
+
         }
     }
 }

@@ -34,6 +34,11 @@ CREATE TABLE `drink_option` (
 -- Dumping data for table `drink_option`
 --
 
+INSERT INTO `coffeeshop`.`drink_option` (`name`, `price`) VALUES ('샷 추가', '500');
+INSERT INTO `coffeeshop`.`drink_option` (`name`, `price`) VALUES ('바닐라 시럽 추가', '300');
+INSERT INTO `coffeeshop`.`drink_option` (`name`, `price`) VALUES ('헤이즐넛 시럽 추가', '300');
+
+
 LOCK TABLES `drink_option` WRITE;
 /*!40000 ALTER TABLE `drink_option` DISABLE KEYS */;
 /*!40000 ALTER TABLE `drink_option` ENABLE KEYS */;

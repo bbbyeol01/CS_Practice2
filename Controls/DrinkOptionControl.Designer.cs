@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinkOptionControl));
             this.lbl_name = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_quantity = new System.Windows.Forms.Label();
+            this.btn_plus = new System.Windows.Forms.Button();
             this.btn_minus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -39,55 +38,57 @@
             // 
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Pretendard", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_name.Location = new System.Drawing.Point(70, 20);
+            this.lbl_name.Location = new System.Drawing.Point(70, 21);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(49, 18);
+            this.lbl_name.Size = new System.Drawing.Size(60, 18);
             this.lbl_name.TabIndex = 0;
-            this.lbl_name.Text = "label1";
+            this.lbl_name.Text = "옵션이름";
             // 
-            // label1
+            // lbl_quantity
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(278, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "0";
+            this.lbl_quantity.AutoSize = true;
+            this.lbl_quantity.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_quantity.Location = new System.Drawing.Point(278, 21);
+            this.lbl_quantity.Name = "lbl_quantity";
+            this.lbl_quantity.Size = new System.Drawing.Size(20, 19);
+            this.lbl_quantity.TabIndex = 2;
+            this.lbl_quantity.Text = "0";
             // 
-            // button1
+            // btn_plus
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(315, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_plus.BackColor = System.Drawing.Color.White;
+            this.btn_plus.FlatAppearance.BorderSize = 0;
+            this.btn_plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_plus.Image = global::Coffee_Kiosk.Properties.Resources.plus_icon;
+            this.btn_plus.Location = new System.Drawing.Point(315, 15);
+            this.btn_plus.Name = "btn_plus";
+            this.btn_plus.Size = new System.Drawing.Size(30, 30);
+            this.btn_plus.TabIndex = 3;
+            this.btn_plus.UseVisualStyleBackColor = false;
+            this.btn_plus.Click += new System.EventHandler(this.btn_plus_Click);
             // 
             // btn_minus
             // 
             this.btn_minus.BackColor = System.Drawing.Color.White;
             this.btn_minus.FlatAppearance.BorderSize = 0;
             this.btn_minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minus.Image = ((System.Drawing.Image)(resources.GetObject("btn_minus.Image")));
+            this.btn_minus.Image = global::Coffee_Kiosk.Properties.Resources.minus_icon;
             this.btn_minus.Location = new System.Drawing.Point(227, 15);
             this.btn_minus.Name = "btn_minus";
             this.btn_minus.Size = new System.Drawing.Size(30, 30);
             this.btn_minus.TabIndex = 1;
             this.btn_minus.UseVisualStyleBackColor = false;
+            this.btn_minus.Click += new System.EventHandler(this.btn_minus_Click);
             // 
-            // DrinkOption
+            // DrinkOptionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_plus);
+            this.Controls.Add(this.lbl_quantity);
             this.Controls.Add(this.btn_minus);
             this.Controls.Add(this.lbl_name);
-            this.Name = "DrinkOption";
+            this.Name = "DrinkOptionControl";
             this.Size = new System.Drawing.Size(400, 60);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,7 +99,7 @@
 
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Button btn_minus;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_quantity;
+        private System.Windows.Forms.Button btn_plus;
     }
 }

@@ -133,9 +133,9 @@ namespace Coffee_Kiosk.Repository
             return desc;
         }
 
-        public List<(string, string)> getOptions()
+        public List<(string, int)> getOptions()
         {
-            List<(string, string)> options = new List<(string, string)>();
+            List<(string, int)> options = new List<(string, int)>();
             MySqlConnection connection = null;
 
 
@@ -151,7 +151,7 @@ namespace Coffee_Kiosk.Repository
                     while (reader.Read())
                     {
                         string name = reader["name"].ToString();
-                        string price = reader["price"].ToString();
+                        int price = int.Parse(reader["price"].ToString());
                         options.Add((name, price));
                     }
                 }

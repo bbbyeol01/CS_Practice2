@@ -37,7 +37,7 @@
             this.radio_hot.AutoSize = true;
             this.radio_hot.Enabled = false;
             this.radio_hot.Font = new System.Drawing.Font("Pretendard", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radio_hot.Location = new System.Drawing.Point(70, 26);
+            this.radio_hot.Location = new System.Drawing.Point(70, 39);
             this.radio_hot.Name = "radio_hot";
             this.radio_hot.Size = new System.Drawing.Size(58, 22);
             this.radio_hot.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.radio_ice.AutoSize = true;
             this.radio_ice.Enabled = false;
             this.radio_ice.Font = new System.Drawing.Font("Pretendard", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radio_ice.Location = new System.Drawing.Point(248, 26);
+            this.radio_ice.Location = new System.Drawing.Point(248, 39);
             this.radio_ice.Name = "radio_ice";
             this.radio_ice.Size = new System.Drawing.Size(50, 22);
             this.radio_ice.TabIndex = 1;
@@ -59,14 +59,14 @@
             this.radio_ice.Text = "ICE";
             this.radio_ice.UseVisualStyleBackColor = true;
             // 
-            // DrinkType
+            // DrinkTypeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.radio_ice);
             this.Controls.Add(this.radio_hot);
-            this.Name = "DrinkType";
-            this.Size = new System.Drawing.Size(400, 75);
+            this.Name = "DrinkTypeControl";
+            this.Size = new System.Drawing.Size(400, 100);
             this.ResumeLayout(false);
             this.PerformLayout();
 

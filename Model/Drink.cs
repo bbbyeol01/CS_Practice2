@@ -26,28 +26,39 @@ namespace Coffee_Kiosk.Model
             get; set;
         }
 
-        // 옵션까지 추가된 총 가격
+        // 순 음료 가격
         public int Price 
         {
             get; set; 
         }
+
+        // HOT/ICE
         public string Type
         {
             get; set;
         }
-        public List<string> Options
-        {
-            get; set;
-        }
+
+        public List<DrinkOption> Options = new List<DrinkOption>();
 
         public Image DrinkImage
         {
             get; set;
         }
 
-        public void AddOption(string option)
+        public int Quantity
+        {
+            get; set;
+        }
+
+        public void AddOption(DrinkOption option)
         {
             this.Options.Add(option);
+        }
+
+        public void DeleteOption(DrinkOption option)
+        {
+            //this.Options.Remove(option);
+            this.Options.RemoveAll(addedOption => option.Name == addedOption.Name);
         }
     }
 }

@@ -11,10 +11,10 @@ namespace Coffee_Kiosk.Repository
     public class DatabaseManager
     {
         private readonly string _server = "localhost";
-        private readonly int _port = 3308;
+        private readonly int _port = 3306;
         private readonly string _database = "coffeeshop";
         private readonly string _id = "root";
-        private readonly string _pw = "abcde12345";
+        private readonly string _pw = "12345";
         private MySqlConnection _connection = null;
         private string _connectionAddress = "";
 

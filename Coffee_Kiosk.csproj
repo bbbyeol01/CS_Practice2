@@ -145,6 +145,7 @@
     <Compile Include="Controls\DrinkOptionControl.Designer.cs">
       <DependentUpon>DrinkOptionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\DrinkOption.cs" />
     <Compile Include="Model\DrinkInfo.cs" />
     <Compile Include="Model\Drink.cs" />
     <Compile Include="View\ShadowForm.cs">

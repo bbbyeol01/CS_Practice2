@@ -30,11 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectOptionForm));
             this.panel_top = new System.Windows.Forms.Panel();
-            this.btn_cancel = new System.Windows.Forms.Button();
             this.panel_info = new System.Windows.Forms.Panel();
             this.lbl_desc = new System.Windows.Forms.Label();
             this.panel_pic = new System.Windows.Forms.Panel();
-            this.pic_drink = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.panel_bottom = new System.Windows.Forms.Panel();
             this.lbl_totalPrice = new System.Windows.Forms.Label();
@@ -42,12 +40,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel_type = new System.Windows.Forms.Panel();
             this.panel_option = new System.Windows.Forms.Panel();
+            this.pic_drink = new System.Windows.Forms.PictureBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             this.panel_info.SuspendLayout();
             this.panel_pic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).BeginInit();
             this.panel_bottom.SuspendLayout();
             this.panel_addBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_top
@@ -58,19 +58,6 @@
             this.panel_top.Name = "panel_top";
             this.panel_top.Size = new System.Drawing.Size(400, 52);
             this.panel_top.TabIndex = 0;
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cancel.FlatAppearance.BorderSize = 0;
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
-            this.btn_cancel.Location = new System.Drawing.Point(353, 9);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(35, 35);
-            this.btn_cancel.TabIndex = 0;
-            this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // panel_info
             // 
@@ -101,15 +88,6 @@
             this.panel_pic.Size = new System.Drawing.Size(161, 140);
             this.panel_pic.TabIndex = 0;
             // 
-            // pic_drink
-            // 
-            this.pic_drink.Location = new System.Drawing.Point(21, 0);
-            this.pic_drink.Name = "pic_drink";
-            this.pic_drink.Size = new System.Drawing.Size(140, 140);
-            this.pic_drink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_drink.TabIndex = 0;
-            this.pic_drink.TabStop = false;
-            // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
@@ -125,15 +103,15 @@
             this.panel_bottom.Controls.Add(this.lbl_totalPrice);
             this.panel_bottom.Controls.Add(this.panel_addBtn);
             this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_bottom.Location = new System.Drawing.Point(0, 605);
+            this.panel_bottom.Location = new System.Drawing.Point(0, 612);
             this.panel_bottom.Name = "panel_bottom";
-            this.panel_bottom.Size = new System.Drawing.Size(400, 95);
+            this.panel_bottom.Size = new System.Drawing.Size(400, 88);
             this.panel_bottom.TabIndex = 4;
             // 
             // lbl_totalPrice
             // 
             this.lbl_totalPrice.Font = new System.Drawing.Font("Pretendard", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_totalPrice.Location = new System.Drawing.Point(49, 31);
+            this.lbl_totalPrice.Location = new System.Drawing.Point(49, 28);
             this.lbl_totalPrice.Name = "lbl_totalPrice";
             this.lbl_totalPrice.Size = new System.Drawing.Size(156, 32);
             this.lbl_totalPrice.TabIndex = 1;
@@ -147,7 +125,7 @@
             this.panel_addBtn.Location = new System.Drawing.Point(207, 0);
             this.panel_addBtn.Name = "panel_addBtn";
             this.panel_addBtn.Padding = new System.Windows.Forms.Padding(20);
-            this.panel_addBtn.Size = new System.Drawing.Size(193, 95);
+            this.panel_addBtn.Size = new System.Drawing.Size(193, 88);
             this.panel_addBtn.TabIndex = 0;
             // 
             // button1
@@ -160,7 +138,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(20, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 55);
+            this.button1.Size = new System.Drawing.Size(153, 48);
             this.button1.TabIndex = 0;
             this.button1.Text = "추가하기";
             this.button1.UseVisualStyleBackColor = false;
@@ -170,16 +148,38 @@
             this.panel_type.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_type.Location = new System.Drawing.Point(0, 192);
             this.panel_type.Name = "panel_type";
-            this.panel_type.Size = new System.Drawing.Size(400, 80);
+            this.panel_type.Size = new System.Drawing.Size(400, 100);
             this.panel_type.TabIndex = 5;
             // 
             // panel_option
             // 
             this.panel_option.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_option.Location = new System.Drawing.Point(0, 272);
+            this.panel_option.Location = new System.Drawing.Point(0, 292);
             this.panel_option.Name = "panel_option";
             this.panel_option.Size = new System.Drawing.Size(400, 322);
             this.panel_option.TabIndex = 6;
+            // 
+            // pic_drink
+            // 
+            this.pic_drink.Location = new System.Drawing.Point(21, 0);
+            this.pic_drink.Name = "pic_drink";
+            this.pic_drink.Size = new System.Drawing.Size(140, 140);
+            this.pic_drink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_drink.TabIndex = 0;
+            this.pic_drink.TabStop = false;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
+            this.btn_cancel.Location = new System.Drawing.Point(353, 9);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(35, 35);
+            this.btn_cancel.TabIndex = 0;
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // SelectOptionForm
             // 
@@ -201,9 +201,9 @@
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
             this.panel_pic.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).EndInit();
             this.panel_bottom.ResumeLayout(false);
             this.panel_addBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).EndInit();
             this.ResumeLayout(false);
 
         }
