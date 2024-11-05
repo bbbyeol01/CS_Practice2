@@ -19,6 +19,9 @@ namespace Coffee_Kiosk.View
         MenuRepository menuRepository = new MenuRepository();
         int selectDrinkPrice;
 
+        public delegate void AddDrinkHandler(Drink drink);
+        public event AddDrinkHandler addDrink;
+
         public SelectOptionForm(Drink drink)
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace Coffee_Kiosk.View
             this.lbl_name.Text = drink.Name;
             this.pic_drink.Image = drink.DrinkImage;
             this.lbl_desc.Text = menuRepository.getDesc(drink.Idx);
-            this.lbl_totalPrice.Text = $"{drink.Price}원";
+            this.lbl_totalPrice.Text = $"{drink.Price.ToString("N0")}원";
 
             List<string> types = menuRepository.getTypes(drink.Idx);
             DrinkTypeControl drinkType = new DrinkTypeControl();
@@ -78,20 +81,51 @@ namespace Coffee_Kiosk.View
         private void OptionPlus(DrinkOption option)
         {
             selectDrinkPrice += option.Price;
-            drink.AddOption(option);
-            this.lbl_totalPrice.Text = (selectDrinkPrice).ToString();
+
+            DrinkOption existOption = drink.Options.Find(addedOption => addedOption.Name == option.Name);
+            if (existOption != null)
+            {
+                existOption.Quantity += 1;
+            }
+            else
+            {
+                option.Quantity = 1;
+                drink.AddOption(option);
+
+            }
+
+            this.lbl_totalPrice.Text = $"{selectDrinkPrice.ToString("N0")}원";
+
         }
 
         public void OptionMinus(DrinkOption option)
         {
-            if(option.Quantity == 1)
+            if(option.Quantity == 0)
             {
-                drink.DeleteOption(option);
+                return;
             }
             selectDrinkPrice -= option.Price;
-            this.lbl_totalPrice.Text = (selectDrinkPrice).ToString();
 
+            if (option.Quantity == 1)
+            {
+                drink.DeleteOption(option);
+                option.Quantity = 0;
+                return;
+            }
 
+            DrinkOption existOption = drink.Options.Find(addedOption => addedOption.Name == option.Name);
+            if (existOption != null)
+            {
+                existOption.Quantity -= 1;
+            }
+
+            this.lbl_totalPrice.Text = $"{selectDrinkPrice.ToString("N0")}원";
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            addDrink.Invoke(drink);
+            this.Close();
         }
     }
 }

@@ -145,6 +145,12 @@
     <Compile Include="Controls\DrinkOptionControl.Designer.cs">
       <DependentUpon>DrinkOptionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddedDrinkControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddedDrinkControl.Designer.cs">
+      <DependentUpon>AddedDrinkControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\DrinkOption.cs" />
     <Compile Include="Model\DrinkInfo.cs" />
     <Compile Include="Model\Drink.cs" />
@@ -176,6 +182,9 @@
     <Compile Include="Controls\MenuItem.Designer.cs">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\AddedDrinkControl.resx">
+      <DependentUpon>AddedDrinkControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DrinkOptionControl.resx">
       <DependentUpon>DrinkOptionControl.cs</DependentUpon>
     </EmbeddedResource>

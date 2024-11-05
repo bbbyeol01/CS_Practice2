@@ -13,7 +13,7 @@ namespace Coffee_Kiosk.Model
         
         public Drink()
         {
-
+            this.Quantity = 1;
         }
 
         public int Idx
@@ -59,6 +59,31 @@ namespace Coffee_Kiosk.Model
         {
             //this.Options.Remove(option);
             this.Options.RemoveAll(addedOption => option.Name == addedOption.Name);
+        }
+
+        public override bool Equals(object obj)
+        {
+            Drink otherDrink = (Drink)obj;
+
+            // 이름과 타입 비교
+            if (this.Name != otherDrink.Name || this.Type != otherDrink.Type)
+                return false;
+
+            // 옵션 수가 동일한지 확인
+            if (this.Options.Count != otherDrink.Options.Count)
+                return false;
+
+            // 각 옵션을 비교
+            for (int i = 0; i < this.Options.Count; i++)
+            {
+                if (this.Options[i].Name != otherDrink.Options[i].Name ||
+                    this.Options[i].Quantity != otherDrink.Options[i].Quantity)
+                {
+                    return false;
+                }
+            }
+
+            return true; // 모든 비교를 통과하면 true 반환
         }
     }
 }

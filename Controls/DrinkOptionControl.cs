@@ -34,21 +34,16 @@ namespace Coffee_Kiosk.Controls
 
         private void btn_minus_Click(object sender, EventArgs e)
         {
-            if(option.Quantity == 0)
-            {
-                return;
-            }
+          
 
-            option.Quantity -= 1;
-            lbl_quantity.Text = option.Quantity.ToString();
             optionMinus.Invoke(option);
+            lbl_quantity.Text = option.Quantity.ToString();
         }
 
         private void btn_plus_Click(object sender, EventArgs e)
         {
-            option.Quantity += 1;
-            lbl_quantity.Text = option.Quantity.ToString();
             optionPlus.Invoke(option);
+            lbl_quantity.Text = option.Quantity.ToString();
 
         }
     }

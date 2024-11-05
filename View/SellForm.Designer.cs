@@ -36,15 +36,15 @@
             this.btn_nonCoffee = new System.Windows.Forms.Button();
             this.btn_coffee = new System.Windows.Forms.Button();
             this.panel_order = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_total = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_quantity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_totalPrice = new System.Windows.Forms.Label();
             this.panel_btn = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.panel_menu = new System.Windows.Forms.Panel();
+            this.panel_list = new System.Windows.Forms.Panel();
             this.panel_category.SuspendLayout();
             this.panel_order.SuspendLayout();
             this.panel_total.SuspendLayout();
@@ -154,7 +154,7 @@
             // 
             // panel_order
             // 
-            this.panel_order.Controls.Add(this.panel2);
+            this.panel_order.Controls.Add(this.panel_list);
             this.panel_order.Controls.Add(this.panel_total);
             this.panel_order.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_order.Location = new System.Drawing.Point(0, 666);
@@ -162,14 +162,6 @@
             this.panel_order.Padding = new System.Windows.Forms.Padding(20);
             this.panel_order.Size = new System.Drawing.Size(540, 294);
             this.panel_order.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(20, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 174);
-            this.panel2.TabIndex = 1;
             // 
             // panel_total
             // 
@@ -183,7 +175,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lbl_quantity);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl_totalPrice);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -193,16 +185,16 @@
             this.panel1.Size = new System.Drawing.Size(306, 100);
             this.panel1.TabIndex = 1;
             // 
-            // label2
+            // lbl_quantity
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(54, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 60);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "99개";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_quantity.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbl_quantity.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_quantity.Location = new System.Drawing.Point(54, 20);
+            this.lbl_quantity.Name = "lbl_quantity";
+            this.lbl_quantity.Size = new System.Drawing.Size(61, 60);
+            this.lbl_quantity.TabIndex = 2;
+            this.lbl_quantity.Text = "0개";
+            this.lbl_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -223,7 +215,7 @@
             this.lbl_totalPrice.Name = "lbl_totalPrice";
             this.lbl_totalPrice.Size = new System.Drawing.Size(171, 60);
             this.lbl_totalPrice.TabIndex = 0;
-            this.lbl_totalPrice.Text = "9,999원";
+            this.lbl_totalPrice.Text = "0원";
             this.lbl_totalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel_btn
@@ -262,6 +254,15 @@
             this.panel_menu.Name = "panel_menu";
             this.panel_menu.Size = new System.Drawing.Size(540, 513);
             this.panel_menu.TabIndex = 3;
+            // 
+            // panel_list
+            // 
+            this.panel_list.AutoScroll = true;
+            this.panel_list.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_list.Location = new System.Drawing.Point(20, 3);
+            this.panel_list.Name = "panel_list";
+            this.panel_list.Size = new System.Drawing.Size(500, 171);
+            this.panel_list.TabIndex = 1;
             // 
             // SellForm
             // 
@@ -303,10 +304,10 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_totalPrice;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_quantity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_dessert;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_list;
     }
 }
 

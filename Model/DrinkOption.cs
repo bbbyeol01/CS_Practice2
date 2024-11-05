@@ -28,5 +28,15 @@ namespace Coffee_Kiosk.Model
         {
             get; set;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is DrinkOption otherOption)
+            {
+                return this.Name == otherOption.Name && this.Quantity == otherOption.Quantity;
+            }
+            return false;
+        }
+
     }
 }

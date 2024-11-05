@@ -17,6 +17,9 @@ namespace Coffee_Kiosk
 
         Drink drink;
 
+        public delegate void AddDrinkHandler(Drink drink);
+        public event AddDrinkHandler addDrink;
+
         public MenuItem(Drink drink)
         {
             InitializeComponent();
@@ -71,20 +74,22 @@ namespace Coffee_Kiosk
 
         private void MenuItem_Click(object sender, EventArgs e)
         {
-            //Drink drink = new Drink();
-            //drink.Name = Lbl_name;
-            //drink.Price = int.Parse(Lbl_price.Replace("원", "").Replace(",", ""));
-            //drink.DrinkImage = Pic_drink;
-
             ShadowForm shadow = new ShadowForm();
             shadow.Show();
 
             SelectOptionForm selectOptionForm = new SelectOptionForm(drink);
+            selectOptionForm.addDrink += AddDrink;
 
             // selectoptionform이 꺼지면 shadow가 꺼지는 이벤트
             selectOptionForm.FormClosed += (s, args) => shadow.Dispose();
             selectOptionForm.Show();
 
+        }
+
+        private void AddDrink(Drink drink)
+        {
+            this.drink = drink;
+            addDrink.Invoke(drink);
         }
     }
 }

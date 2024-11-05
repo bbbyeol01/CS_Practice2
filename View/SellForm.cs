@@ -12,6 +12,7 @@ using System.IO;
 using Coffee_Kiosk.Repository;
 using Coffee_Kiosk.View;
 using Coffee_Kiosk.Model;
+using Coffee_Kiosk.Controls;
 
 namespace Coffee_Kiosk
 {
@@ -19,6 +20,8 @@ namespace Coffee_Kiosk
     {
         List<Button> buttons = new List<Button>();
         MenuRepository menuRepository = new MenuRepository();
+
+        List<Drink> drinks = new List<Drink>();
 
         public SellForm()
         {
@@ -104,7 +107,8 @@ namespace Coffee_Kiosk
 
                 MenuItem menuItem = new MenuItem(drink);
                 menuItem.Lbl_name = drinkInfo.Name;
-                menuItem.Lbl_price = $"{drinkInfo.Price}원";
+                menuItem.Lbl_price = $"{drinkInfo.Price.ToString("N0")}원";
+                menuItem.addDrink += AddDrink;
 
                 // menuItem.Pic_drink = Properties.Resources.americano;
 
@@ -158,6 +162,48 @@ namespace Coffee_Kiosk
                 btn.BackColor = Color.White;
                 btn.ForeColor = Color.FromArgb(0, 0, 5, 85);
             }
+        }
+
+        int listYOffset = 0;
+        int height = 40;
+        private void AddDrink(Drink drink)
+        {
+            //Drink existDrink = drinks.Find(addDrink => addDrink.Equals(drink));
+            //if(existDrink != null)
+            //{
+                //existDrink.Quantity += 1;
+                // AddedDrinkControl 수량 수정하는 코드
+            //}
+            //else
+            //{
+                this.drinks.Add(drink);
+                AddedDrinkControl addedDrinkControl = new AddedDrinkControl(drink);
+                addedDrinkControl.Location = new Point(0, listYOffset);
+                panel_list.Controls.Add(addedDrinkControl);
+
+                listYOffset += height;
+            
+                MessageBox.Show(listYOffset.ToString());
+
+            //}
+
+            int totalPrice = 0;
+            int totalCount = 0;
+            foreach(Drink addedDrink in drinks)
+            {
+                totalCount += addedDrink.Quantity;
+                totalPrice += addedDrink.Price * addedDrink.Quantity;
+                foreach(DrinkOption addedOption in addedDrink.Options)
+                {
+                    totalPrice += addedOption.Price * addedOption.Quantity;
+                }
+            }
+
+            lbl_quantity.Text = $"{totalCount}개";
+            lbl_totalPrice.Text = $"{totalPrice.ToString("N0")}원";
+
+            
+
         }
 
        
