@@ -54,6 +54,13 @@ namespace Coffee_Kiosk
 
         }
 
+        private void SellForm_Load(object sender, EventArgs e)
+        {
+            List<DrinkInfo> menuItems = menuRepository.getMenuByCategory("coffee");
+            MenuPrint(menuItems);
+
+        }
+
         private void btn_coffee_Click(object sender, EventArgs e)
         {
             List<DrinkInfo> menuItems = menuRepository.getMenuByCategory("coffee");
@@ -90,7 +97,12 @@ namespace Coffee_Kiosk
 
             foreach (DrinkInfo drinkInfo in drinkInfoList)
             {
-                MenuItem menuItem = new MenuItem();
+                Drink drink = new Drink();
+                drink.Idx = drinkInfo.Idx;
+                drink.Name = drinkInfo.Name;
+                drink.Price = drinkInfo.Price;
+
+                MenuItem menuItem = new MenuItem(drink);
                 menuItem.Lbl_name = drinkInfo.Name;
                 menuItem.Lbl_price = $"{drinkInfo.Price}원";
 
@@ -106,6 +118,7 @@ namespace Coffee_Kiosk
                     // 이미지 데이터를 메모리 스트림으로 변환하여 Image 객체를 생성합니다
                     using (var stream = new MemoryStream(imageData))
                     {
+                        drink.DrinkImage = Image.FromStream(stream);
                         menuItem.Pic_drink = Image.FromStream(stream);
                     }
                 }
@@ -146,11 +159,6 @@ namespace Coffee_Kiosk
             }
         }
 
-        private void SellForm_Load(object sender, EventArgs e)
-        {
-            List<DrinkInfo> menuItems = menuRepository.getMenuByCategory("coffee");
-            MenuPrint(menuItems);
-
-        }
+       
     }
 }

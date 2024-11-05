@@ -15,6 +15,11 @@ namespace Coffee_Kiosk.Model
         {
 
         }
+
+        public int Idx
+        {
+            get; set;
+        }
         
         public string Name 
         {

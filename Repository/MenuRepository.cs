@@ -98,7 +98,7 @@ namespace Coffee_Kiosk.Repository
         }
 
       
-        public string getDesc(string name)
+        public string getDesc(int idx)
         {
             string desc = "";
 
@@ -109,10 +109,10 @@ namespace Coffee_Kiosk.Repository
             try
             {
                 connection = databaseManager.GetConnection();
-                string query = $"SELECT description FROM menu WHERE name = @name"; // AND branch = @branch
+                string query = $"SELECT description FROM menu WHERE idx = @idx";
 
                 cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@idx", idx);
 
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -125,7 +125,8 @@ namespace Coffee_Kiosk.Repository
             }
             finally
             {
-               
+                cmd?.Dispose();
+                reader?.Close();
 
             }
 
@@ -140,6 +141,7 @@ namespace Coffee_Kiosk.Repository
 
             try
             {
+                connection = databaseManager.GetConnection();
                 string query = "SELECT name, price FROM drink_option";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
@@ -153,10 +155,11 @@ namespace Coffee_Kiosk.Repository
                         options.Add((name, price));
                     }
                 }
+                
 
             }catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
 
             return options;

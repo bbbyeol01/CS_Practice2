@@ -14,9 +14,13 @@ namespace Coffee_Kiosk
 {
     public partial class MenuItem : UserControl
     {
-        public MenuItem()
+
+        Drink drink;
+
+        public MenuItem(Drink drink)
         {
             InitializeComponent();
+            this.drink = drink; 
         }
 
         public string Lbl_name
@@ -67,10 +71,10 @@ namespace Coffee_Kiosk
 
         private void MenuItem_Click(object sender, EventArgs e)
         {
-            Drink drink = new Drink();
-            drink.Name = Lbl_name;
-            drink.Price = int.Parse(Lbl_price.Replace("원", "").Replace(",", ""));
-            drink.DrinkImage = Pic_drink;
+            //Drink drink = new Drink();
+            //drink.Name = Lbl_name;
+            //drink.Price = int.Parse(Lbl_price.Replace("원", "").Replace(",", ""));
+            //drink.DrinkImage = Pic_drink;
 
             ShadowForm shadow = new ShadowForm();
             shadow.Show();

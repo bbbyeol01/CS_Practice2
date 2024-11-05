@@ -1,6 +1,8 @@
-﻿namespace Coffee_Kiosk
+﻿using System.Windows.Forms;
+
+namespace Coffee_Kiosk
 {
-    partial class MenuItem
+    partial class MenuItem : UserControl
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -83,7 +85,7 @@
             this.lbl_price.Name = "lbl_price";
             this.lbl_price.Size = new System.Drawing.Size(124, 30);
             this.lbl_price.TabIndex = 4;
-            this.lbl_price.Text = "label1";
+            this.lbl_price.Text = "9,999원";
             this.lbl_price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_price.Click += new System.EventHandler(this.MenuItem_Click);
             // 
@@ -95,7 +97,7 @@
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(137, 30);
             this.lbl_name.TabIndex = 3;
-            this.lbl_name.Text = "label2";
+            this.lbl_name.Text = "음료이름";
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_name.Click += new System.EventHandler(this.MenuItem_Click);
             // 
