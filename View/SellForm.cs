@@ -118,6 +118,7 @@ namespace Coffee_Kiosk
                     // 이미지 데이터를 메모리 스트림으로 변환하여 Image 객체를 생성합니다
                     using (var stream = new MemoryStream(imageData))
                     {
+                        // 주소값이 같기 때문에 늦게 수정해도 ㄱㅊ
                         drink.DrinkImage = Image.FromStream(stream);
                         menuItem.Pic_drink = Image.FromStream(stream);
                     }

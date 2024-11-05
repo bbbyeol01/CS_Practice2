@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Coffee_Kiosk.Controls
 {
-    public partial class DrinkType : UserControl
+    public partial class DrinkTypeControl : UserControl
     {
-        public DrinkType()
+        public DrinkTypeControl()
         {
             InitializeComponent();
         }

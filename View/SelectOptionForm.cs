@@ -31,7 +31,7 @@ namespace Coffee_Kiosk.View
             this.lbl_desc.Text = menuRepository.getDesc(drink.Idx);
 
             List<string> types = menuRepository.getTypes(drink.Idx);
-            DrinkType drinkType = new DrinkType();
+            DrinkTypeControl drinkType = new DrinkTypeControl();
             foreach (string type in types)
             {
                 if(type == "HOT")
@@ -51,7 +51,7 @@ namespace Coffee_Kiosk.View
             int yOffset = 0;
             foreach(var (name, price) in options)
             {
-                DrinkOption option = new DrinkOption();
+                DrinkOptionControl option = new DrinkOptionControl();
                 option.Name = name;
                 option.Location = new Point(0, yOffset);
                 panel_option.Controls.Add(option);

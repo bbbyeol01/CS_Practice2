@@ -133,17 +133,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\DrinkType.cs">
+    <Compile Include="Controls\DrinkTypeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DrinkType.Designer.cs">
-      <DependentUpon>DrinkType.cs</DependentUpon>
+    <Compile Include="Controls\DrinkTypeControl.Designer.cs">
+      <DependentUpon>DrinkTypeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\DrinkOption.cs">
+    <Compile Include="Controls\DrinkOptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DrinkOption.Designer.cs">
-      <DependentUpon>DrinkOption.cs</DependentUpon>
+    <Compile Include="Controls\DrinkOptionControl.Designer.cs">
+      <DependentUpon>DrinkOptionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DrinkInfo.cs" />
     <Compile Include="Model\Drink.cs" />
@@ -175,11 +175,11 @@
     <Compile Include="Controls\MenuItem.Designer.cs">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\DrinkOption.resx">
-      <DependentUpon>DrinkOption.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\DrinkOptionControl.resx">
+      <DependentUpon>DrinkOptionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DrinkType.resx">
-      <DependentUpon>DrinkType.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\DrinkTypeControl.resx">
+      <DependentUpon>DrinkTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShadowForm.resx">
       <DependentUpon>ShadowForm.cs</DependentUpon>

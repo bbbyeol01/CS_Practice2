@@ -1,6 +1,6 @@
 ﻿namespace Coffee_Kiosk.Controls
 {
-    partial class DrinkOption
+    partial class DrinkOptionControl
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinkOption));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinkOptionControl));
             this.lbl_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();

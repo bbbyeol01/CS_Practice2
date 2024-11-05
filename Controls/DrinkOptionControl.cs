@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace Coffee_Kiosk.Controls
 {
-    public partial class DrinkOption : UserControl
+    public partial class DrinkOptionControl : UserControl
     {
-        public DrinkOption()
+        public delegate void OptionAddHandler();
+        public event OptionAddHandler OnOptionAdd;
+
+        public DrinkOptionControl()
         {
             InitializeComponent();
         }
