@@ -76,7 +76,11 @@ namespace Coffee_Kiosk
             shadow.Show();
 
             SelectOptionForm selectOptionForm = new SelectOptionForm(drink);
+
+            // selectoptionform이 꺼지면 shadow가 꺼지는 이벤트
+            selectOptionForm.FormClosed += (s, args) => shadow.Dispose();
             selectOptionForm.Show();
+
         }
     }
 }

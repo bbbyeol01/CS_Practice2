@@ -133,6 +133,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DrinkInfo.cs" />
     <Compile Include="Model\Drink.cs" />
     <Compile Include="View\ShadowForm.cs">
       <SubType>Form</SubType>
@@ -200,7 +201,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cancel.png" />
     <Content Include="Resources\Entypo-license.txt" />
+    <None Include="Resources\iconmonstr-x-mark-lined-240.png" />
+    <None Include="Resources\KakaoTalk_20241105_123227905.png" />
     <Content Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>

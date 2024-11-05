@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectOptionForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_desc = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.panel_pic = new System.Windows.Forms.Panel();
             this.pic_drink = new System.Windows.Forms.PictureBox();
-            this.lbl_name = new System.Windows.Forms.Label();
-            this.lbl_desc = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_pic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).BeginInit();
@@ -41,11 +44,25 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_cancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 24);
+            this.panel1.Size = new System.Drawing.Size(400, 38);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
+            this.btn_cancel.Location = new System.Drawing.Point(353, 3);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(35, 35);
+            this.btn_cancel.TabIndex = 0;
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // panel2
             // 
@@ -53,10 +70,30 @@
             this.panel2.Controls.Add(this.lbl_name);
             this.panel2.Controls.Add(this.panel_pic);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 24);
+            this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 160);
             this.panel2.TabIndex = 1;
+            // 
+            // lbl_desc
+            // 
+            this.lbl_desc.AutoSize = true;
+            this.lbl_desc.Font = new System.Drawing.Font("Pretendard Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_desc.Location = new System.Drawing.Point(190, 64);
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(48, 18);
+            this.lbl_desc.TabIndex = 3;
+            this.lbl_desc.Text = "label2";
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_name.Location = new System.Drawing.Point(190, 40);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(66, 23);
+            this.lbl_name.TabIndex = 2;
+            this.lbl_name.Text = "label2";
             // 
             // panel_pic
             // 
@@ -78,26 +115,6 @@
             this.pic_drink.TabIndex = 0;
             this.pic_drink.TabStop = false;
             // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_name.Location = new System.Drawing.Point(190, 40);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(66, 23);
-            this.lbl_name.TabIndex = 2;
-            this.lbl_name.Text = "label2";
-            // 
-            // lbl_desc
-            // 
-            this.lbl_desc.AutoSize = true;
-            this.lbl_desc.Font = new System.Drawing.Font("Pretendard Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_desc.Location = new System.Drawing.Point(190, 64);
-            this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(48, 18);
-            this.lbl_desc.TabIndex = 3;
-            this.lbl_desc.Text = "label2";
-            // 
             // SelectOptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -111,6 +128,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.SelectOptionForm_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_pic.ResumeLayout(false);
@@ -126,5 +144,6 @@
         private System.Windows.Forms.PictureBox pic_drink;
         private System.Windows.Forms.Label lbl_desc;
         private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }

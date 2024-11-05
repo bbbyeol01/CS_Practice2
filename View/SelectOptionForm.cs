@@ -25,5 +25,10 @@ namespace Coffee_Kiosk.View
             this.lbl_name.Text = drink.Name;
             this.pic_drink.Image = drink.DrinkImage;
         }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

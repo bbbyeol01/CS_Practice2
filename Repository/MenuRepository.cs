@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Coffee_Kiosk.Model;
 using MySql.Data.MySqlClient;
 
 namespace Coffee_Kiosk.Repository
@@ -13,9 +14,9 @@ namespace Coffee_Kiosk.Repository
         DatabaseManager databaseManager = new DatabaseManager();
 
 
-        public List<(int, string, string, string, List<string>)> getMenuByCategory(string category)
+        public List<DrinkInfo> getMenuByCategory(string category)
         {
-            List<(int, string, string, string, List<string>)> menu = new List<(int, string, string, string, List<string>)>();
+            List<DrinkInfo> menu = new List<DrinkInfo>();
 
             MySqlConnection connection = null;
             MySqlCommand cmd = null;
@@ -34,11 +35,11 @@ namespace Coffee_Kiosk.Repository
                 {
                     int idx = int.Parse(reader["idx"].ToString());
                     string name = reader["name"].ToString();
-                    string price = $"{reader["price"].ToString()}원";
+                    int price = int.Parse(reader["price"].ToString());
                     string image = reader["image"].ToString();
 
                     // 메뉴에 각 아이템 추가 (타입은 아직 넣지 않음)
-                    menu.Add((idx, name, price, image, new List<string>()));
+                    menu.Add(new DrinkInfo(idx, name, price, image, new List<string>()));
                 }
             }
             catch (Exception ex)
@@ -52,10 +53,10 @@ namespace Coffee_Kiosk.Repository
             }
 
             // 메뉴에 각 아이템에 해당하는 타입 리스트 추가
-            foreach (var item in menu)
+            foreach (DrinkInfo item in menu)
             {
-                List<string> types = getTypes(item.Item1);  // item.Item1은 idx를 의미함
-                item.Item5.AddRange(types);  // 타입 리스트 추가
+                List<string> types = getTypes(item.Idx);  // item.Item1은 idx를 의미함
+                item.Types.AddRange(types);  // 타입 리스트 추가
             }
 
             return menu;

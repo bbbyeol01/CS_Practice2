@@ -43,6 +43,8 @@
             this.panel_btn = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.panel_menu = new System.Windows.Forms.Panel();
+            this.btn_dessert = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_category.SuspendLayout();
             this.panel_order.SuspendLayout();
             this.panel_total.SuspendLayout();
@@ -60,26 +62,28 @@
             // 
             // panel_category
             // 
+            this.panel_category.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_category.Controls.Add(this.btn_dessert);
             this.panel_category.Controls.Add(this.btn_smootie);
             this.panel_category.Controls.Add(this.btn_teaAndAde);
             this.panel_category.Controls.Add(this.btn_nonCoffee);
             this.panel_category.Controls.Add(this.btn_coffee);
-            this.panel_category.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_category.Location = new System.Drawing.Point(0, 50);
+            this.panel_category.Location = new System.Drawing.Point(0, 53);
             this.panel_category.Name = "panel_category";
-            this.panel_category.Size = new System.Drawing.Size(540, 100);
+            this.panel_category.Size = new System.Drawing.Size(650, 100);
             this.panel_category.TabIndex = 1;
             // 
             // btn_smootie
             // 
             this.btn_smootie.BackColor = System.Drawing.Color.White;
-            this.btn_smootie.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_smootie.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_smootie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_smootie.FlatAppearance.BorderSize = 0;
             this.btn_smootie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_smootie.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_smootie.Location = new System.Drawing.Point(405, 0);
+            this.btn_smootie.Location = new System.Drawing.Point(390, 0);
             this.btn_smootie.Name = "btn_smootie";
-            this.btn_smootie.Size = new System.Drawing.Size(135, 100);
+            this.btn_smootie.Size = new System.Drawing.Size(130, 100);
             this.btn_smootie.TabIndex = 3;
             this.btn_smootie.Text = "스무디";
             this.btn_smootie.UseVisualStyleBackColor = false;
@@ -89,12 +93,13 @@
             // 
             this.btn_teaAndAde.BackColor = System.Drawing.Color.White;
             this.btn_teaAndAde.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_teaAndAde.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_teaAndAde.FlatAppearance.BorderSize = 0;
             this.btn_teaAndAde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_teaAndAde.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_teaAndAde.Location = new System.Drawing.Point(270, 0);
+            this.btn_teaAndAde.Location = new System.Drawing.Point(260, 0);
             this.btn_teaAndAde.Name = "btn_teaAndAde";
-            this.btn_teaAndAde.Size = new System.Drawing.Size(135, 100);
+            this.btn_teaAndAde.Size = new System.Drawing.Size(130, 100);
             this.btn_teaAndAde.TabIndex = 2;
             this.btn_teaAndAde.Text = "차/에이드";
             this.btn_teaAndAde.UseVisualStyleBackColor = false;
@@ -104,12 +109,13 @@
             // 
             this.btn_nonCoffee.BackColor = System.Drawing.Color.White;
             this.btn_nonCoffee.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_nonCoffee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_nonCoffee.FlatAppearance.BorderSize = 0;
             this.btn_nonCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nonCoffee.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_nonCoffee.Location = new System.Drawing.Point(135, 0);
+            this.btn_nonCoffee.Location = new System.Drawing.Point(130, 0);
             this.btn_nonCoffee.Name = "btn_nonCoffee";
-            this.btn_nonCoffee.Size = new System.Drawing.Size(135, 100);
+            this.btn_nonCoffee.Size = new System.Drawing.Size(130, 100);
             this.btn_nonCoffee.TabIndex = 1;
             this.btn_nonCoffee.Text = "논커피";
             this.btn_nonCoffee.UseVisualStyleBackColor = false;
@@ -119,13 +125,14 @@
             // 
             this.btn_coffee.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_coffee.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_coffee.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btn_coffee.FlatAppearance.BorderSize = 0;
             this.btn_coffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_coffee.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_coffee.ForeColor = System.Drawing.Color.White;
             this.btn_coffee.Location = new System.Drawing.Point(0, 0);
             this.btn_coffee.Name = "btn_coffee";
-            this.btn_coffee.Size = new System.Drawing.Size(135, 100);
+            this.btn_coffee.Size = new System.Drawing.Size(130, 100);
             this.btn_coffee.TabIndex = 0;
             this.btn_coffee.Text = "커피";
             this.btn_coffee.UseVisualStyleBackColor = false;
@@ -133,12 +140,13 @@
             // 
             // panel_order
             // 
+            this.panel_order.Controls.Add(this.panel2);
             this.panel_order.Controls.Add(this.panel_total);
             this.panel_order.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_order.Location = new System.Drawing.Point(0, 660);
+            this.panel_order.Location = new System.Drawing.Point(0, 666);
             this.panel_order.Name = "panel_order";
             this.panel_order.Padding = new System.Windows.Forms.Padding(20);
-            this.panel_order.Size = new System.Drawing.Size(540, 300);
+            this.panel_order.Size = new System.Drawing.Size(540, 294);
             this.panel_order.TabIndex = 2;
             // 
             // panel_total
@@ -146,7 +154,7 @@
             this.panel_total.Controls.Add(this.panel1);
             this.panel_total.Controls.Add(this.panel_btn);
             this.panel_total.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_total.Location = new System.Drawing.Point(20, 180);
+            this.panel_total.Location = new System.Drawing.Point(20, 174);
             this.panel_total.Name = "panel_total";
             this.panel_total.Size = new System.Drawing.Size(500, 100);
             this.panel_total.TabIndex = 0;
@@ -226,12 +234,34 @@
             // 
             this.panel_menu.AutoScroll = true;
             this.panel_menu.BackColor = System.Drawing.Color.White;
-            this.panel_menu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_menu.Location = new System.Drawing.Point(0, 150);
+            this.panel_menu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_menu.Location = new System.Drawing.Point(0, 153);
             this.panel_menu.Margin = new System.Windows.Forms.Padding(0);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(540, 510);
+            this.panel_menu.Size = new System.Drawing.Size(540, 513);
             this.panel_menu.TabIndex = 3;
+            // 
+            // btn_dessert
+            // 
+            this.btn_dessert.BackColor = System.Drawing.Color.White;
+            this.btn_dessert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_dessert.FlatAppearance.BorderSize = 0;
+            this.btn_dessert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dessert.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_dessert.Location = new System.Drawing.Point(520, 0);
+            this.btn_dessert.Name = "btn_dessert";
+            this.btn_dessert.Size = new System.Drawing.Size(135, 100);
+            this.btn_dessert.TabIndex = 4;
+            this.btn_dessert.Text = "디저트";
+            this.btn_dessert.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(20, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(500, 174);
+            this.panel2.TabIndex = 1;
             // 
             // SellForm
             // 
@@ -275,6 +305,8 @@
         private System.Windows.Forms.Label lbl_totalPrice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_dessert;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
