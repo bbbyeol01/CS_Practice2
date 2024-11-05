@@ -83,6 +83,7 @@
             this.btn_smootie.TabIndex = 3;
             this.btn_smootie.Text = "스무디";
             this.btn_smootie.UseVisualStyleBackColor = false;
+            this.btn_smootie.Click += new System.EventHandler(this.btn_smootie_Click);
             // 
             // btn_teaAndAde
             // 
@@ -97,6 +98,7 @@
             this.btn_teaAndAde.TabIndex = 2;
             this.btn_teaAndAde.Text = "차/에이드";
             this.btn_teaAndAde.UseVisualStyleBackColor = false;
+            this.btn_teaAndAde.Click += new System.EventHandler(this.btn_teaAndAde_Click);
             // 
             // btn_nonCoffee
             // 
@@ -111,6 +113,7 @@
             this.btn_nonCoffee.TabIndex = 1;
             this.btn_nonCoffee.Text = "논커피";
             this.btn_nonCoffee.UseVisualStyleBackColor = false;
+            this.btn_nonCoffee.Click += new System.EventHandler(this.btn_nonCoffee_Click);
             // 
             // btn_coffee
             // 
@@ -222,6 +225,7 @@
             // panel_menu
             // 
             this.panel_menu.AutoScroll = true;
+            this.panel_menu.BackColor = System.Drawing.Color.White;
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_menu.Location = new System.Drawing.Point(0, 150);
             this.panel_menu.Margin = new System.Windows.Forms.Padding(0);
@@ -244,6 +248,7 @@
             this.Name = "SellForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.SellForm_Load);
             this.panel_category.ResumeLayout(false);
             this.panel_order.ResumeLayout(false);
             this.panel_total.ResumeLayout(false);

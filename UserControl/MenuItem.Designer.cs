@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_type = new System.Windows.Forms.Label();
             this.pic_drink = new System.Windows.Forms.PictureBox();
             this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.lbl_type = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).BeginInit();
             this.SuspendLayout();
@@ -49,9 +49,21 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(270, 150);
+            this.panel1.Size = new System.Drawing.Size(260, 150);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.MenuItem_Click);
+            // 
+            // lbl_type
+            // 
+            this.lbl_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_type.Font = new System.Drawing.Font("Pretendard Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_type.Location = new System.Drawing.Point(121, 87);
+            this.lbl_type.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_type.Name = "lbl_type";
+            this.lbl_type.Size = new System.Drawing.Size(124, 30);
+            this.lbl_type.TabIndex = 6;
+            this.lbl_type.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_type.Click += new System.EventHandler(this.MenuItem_Click);
             // 
             // pic_drink
             // 
@@ -87,18 +99,6 @@
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_name.Click += new System.EventHandler(this.MenuItem_Click);
             // 
-            // lbl_type
-            // 
-            this.lbl_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_type.Font = new System.Drawing.Font("Pretendard Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_type.Location = new System.Drawing.Point(121, 87);
-            this.lbl_type.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_type.Name = "lbl_type";
-            this.lbl_type.Size = new System.Drawing.Size(124, 30);
-            this.lbl_type.TabIndex = 6;
-            this.lbl_type.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_type.Click += new System.EventHandler(this.MenuItem_Click);
-            // 
             // MenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -107,7 +107,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "MenuItem";
-            this.Size = new System.Drawing.Size(270, 150);
+            this.Size = new System.Drawing.Size(260, 150);
             this.Click += new System.EventHandler(this.MenuItem_Click);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_drink)).EndInit();

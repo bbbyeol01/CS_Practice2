@@ -16,22 +16,54 @@ namespace Coffee_Kiosk
 {
     public partial class SellForm : Form
     {
-
+        List<Button> buttons = new List<Button>();
         MenuRepository menuRepository = new MenuRepository();
+
         public SellForm()
         {
             InitializeComponent();
 
+            buttons.Add(btn_coffee);
+            buttons.Add(btn_nonCoffee);
+            buttons.Add(btn_teaAndAde);
+            buttons.Add(btn_smootie);
         }
 
         private void btn_coffee_Click(object sender, EventArgs e)
         {
             List<(int, string, string, string, List<string>)> menuItems = menuRepository.getMenuByCategory("coffee");
+            SelectedMenuBtn(sender as Button);
+            MenuPrint(menuItems);
+        }
 
+        private void btn_nonCoffee_Click(object sender, EventArgs e)
+        {
+            List<(int, string, string, string, List<string>)> menuItems = menuRepository.getMenuByCategory("noncoffee");
+            SelectedMenuBtn(sender as Button);
+            MenuPrint(menuItems);
+        }
+
+        private void btn_teaAndAde_Click(object sender, EventArgs e)
+        {
+            List<(int, string, string, string, List<string>)> menuItems = menuRepository.getMenuByCategory("tea");
+            SelectedMenuBtn(sender as Button);
+            MenuPrint(menuItems);
+        }
+
+        private void btn_smootie_Click(object sender, EventArgs e)
+        {
+            List<(int, string, string, string, List<string>)> menuItems = menuRepository.getMenuByCategory("smootie");
+            SelectedMenuBtn(sender as Button);
+            MenuPrint(menuItems);
+        }
+
+        private void MenuPrint(List<(int, string, string, string, List<string>)> menuItems)
+        {
+            panel_menu.Controls.Clear();
             int xOffset = 0;
             int yOffset = 0;
 
-            foreach(var (idx, name, price, image, types) in menuItems)
+            foreach (var (idx, name, price, image, types) in menuItems)
             {
                 MenuItem menuItem = new MenuItem();
                 menuItem.Lbl_name = name;
@@ -61,7 +93,7 @@ namespace Coffee_Kiosk
                 menuItem.Location = new Point(xOffset, yOffset);
                 xOffset += menuItem.Width;
 
-                if (xOffset + menuItem.Width > this.Width)
+                if (xOffset + menuItem.Width >= this.Width)
                 {
                     yOffset += menuItem.Height;
                     xOffset = 0;
@@ -71,10 +103,29 @@ namespace Coffee_Kiosk
 
 
             }
-
-
-
         }
 
+        private void SelectedMenuBtn(Button ClickedBtn)
+        {
+            foreach(Button btn in buttons)
+            {
+                if(btn == ClickedBtn)
+                {
+                    btn.BackColor = Color.CornflowerBlue;
+                    btn.ForeColor = Color.White;
+                    continue;
+                }
+
+                btn.BackColor = Color.White;
+                btn.ForeColor = Color.FromArgb(0, 0, 5, 85);
+            }
+        }
+
+        private void SellForm_Load(object sender, EventArgs e)
+        {
+            List<(int, string, string, string, List<string>)> menuItems = menuRepository.getMenuByCategory("coffee");
+            MenuPrint(menuItems);
+
+        }
     }
 }
