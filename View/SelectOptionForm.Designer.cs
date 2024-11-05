@@ -33,10 +33,11 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.panel_info = new System.Windows.Forms.Panel();
             this.lbl_desc = new System.Windows.Forms.Label();
-            this.lbl_name = new System.Windows.Forms.Label();
             this.panel_pic = new System.Windows.Forms.Panel();
             this.pic_drink = new System.Windows.Forms.PictureBox();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.panel_bottom = new System.Windows.Forms.Panel();
+            this.lbl_totalPrice = new System.Windows.Forms.Label();
             this.panel_addBtn = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_type = new System.Windows.Forms.Panel();
@@ -89,17 +90,7 @@
             this.lbl_desc.Name = "lbl_desc";
             this.lbl_desc.Size = new System.Drawing.Size(204, 73);
             this.lbl_desc.TabIndex = 3;
-            this.lbl_desc.Text = "label2";
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_name.Location = new System.Drawing.Point(166, 28);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(66, 23);
-            this.lbl_name.TabIndex = 2;
-            this.lbl_name.Text = "label2";
+            this.lbl_desc.Text = "음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 음료설명 ";
             // 
             // panel_pic
             // 
@@ -119,14 +110,35 @@
             this.pic_drink.TabIndex = 0;
             this.pic_drink.TabStop = false;
             // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_name.Location = new System.Drawing.Point(166, 28);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(78, 23);
+            this.lbl_name.TabIndex = 2;
+            this.lbl_name.Text = "음료 이름";
+            // 
             // panel_bottom
             // 
+            this.panel_bottom.Controls.Add(this.lbl_totalPrice);
             this.panel_bottom.Controls.Add(this.panel_addBtn);
             this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_bottom.Location = new System.Drawing.Point(0, 605);
             this.panel_bottom.Name = "panel_bottom";
             this.panel_bottom.Size = new System.Drawing.Size(400, 95);
             this.panel_bottom.TabIndex = 4;
+            // 
+            // lbl_totalPrice
+            // 
+            this.lbl_totalPrice.Font = new System.Drawing.Font("Pretendard", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_totalPrice.Location = new System.Drawing.Point(49, 31);
+            this.lbl_totalPrice.Name = "lbl_totalPrice";
+            this.lbl_totalPrice.Size = new System.Drawing.Size(156, 32);
+            this.lbl_totalPrice.TabIndex = 1;
+            this.lbl_totalPrice.Text = "9,999원";
+            this.lbl_totalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel_addBtn
             // 
@@ -209,5 +221,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel_type;
         private System.Windows.Forms.Panel panel_option;
+        private System.Windows.Forms.Label lbl_totalPrice;
     }
 }

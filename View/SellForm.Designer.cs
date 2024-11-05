@@ -30,11 +30,13 @@
         {
             this.panel_top = new System.Windows.Forms.Panel();
             this.panel_category = new System.Windows.Forms.Panel();
+            this.btn_dessert = new System.Windows.Forms.Button();
             this.btn_smootie = new System.Windows.Forms.Button();
             this.btn_teaAndAde = new System.Windows.Forms.Button();
             this.btn_nonCoffee = new System.Windows.Forms.Button();
             this.btn_coffee = new System.Windows.Forms.Button();
             this.panel_order = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_total = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.panel_btn = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.panel_menu = new System.Windows.Forms.Panel();
-            this.btn_dessert = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_category.SuspendLayout();
             this.panel_order.SuspendLayout();
             this.panel_total.SuspendLayout();
@@ -72,6 +72,20 @@
             this.panel_category.Name = "panel_category";
             this.panel_category.Size = new System.Drawing.Size(650, 100);
             this.panel_category.TabIndex = 1;
+            // 
+            // btn_dessert
+            // 
+            this.btn_dessert.BackColor = System.Drawing.Color.White;
+            this.btn_dessert.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_dessert.FlatAppearance.BorderSize = 0;
+            this.btn_dessert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dessert.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_dessert.Location = new System.Drawing.Point(520, 0);
+            this.btn_dessert.Name = "btn_dessert";
+            this.btn_dessert.Size = new System.Drawing.Size(135, 100);
+            this.btn_dessert.TabIndex = 4;
+            this.btn_dessert.Text = "디저트";
+            this.btn_dessert.UseVisualStyleBackColor = false;
             // 
             // btn_smootie
             // 
@@ -149,6 +163,14 @@
             this.panel_order.Size = new System.Drawing.Size(540, 294);
             this.panel_order.TabIndex = 2;
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(20, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(500, 174);
+            this.panel2.TabIndex = 1;
+            // 
             // panel_total
             // 
             this.panel_total.Controls.Add(this.panel1);
@@ -179,7 +201,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 60);
             this.label2.TabIndex = 2;
-            this.label2.Text = "1개";
+            this.label2.Text = "99개";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
@@ -201,7 +223,7 @@
             this.lbl_totalPrice.Name = "lbl_totalPrice";
             this.lbl_totalPrice.Size = new System.Drawing.Size(171, 60);
             this.lbl_totalPrice.TabIndex = 0;
-            this.lbl_totalPrice.Text = "1,800원";
+            this.lbl_totalPrice.Text = "9,999원";
             this.lbl_totalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel_btn
@@ -240,28 +262,6 @@
             this.panel_menu.Name = "panel_menu";
             this.panel_menu.Size = new System.Drawing.Size(540, 513);
             this.panel_menu.TabIndex = 3;
-            // 
-            // btn_dessert
-            // 
-            this.btn_dessert.BackColor = System.Drawing.Color.White;
-            this.btn_dessert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_dessert.FlatAppearance.BorderSize = 0;
-            this.btn_dessert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dessert.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_dessert.Location = new System.Drawing.Point(520, 0);
-            this.btn_dessert.Name = "btn_dessert";
-            this.btn_dessert.Size = new System.Drawing.Size(135, 100);
-            this.btn_dessert.TabIndex = 4;
-            this.btn_dessert.Text = "디저트";
-            this.btn_dessert.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(20, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 174);
-            this.panel2.TabIndex = 1;
             // 
             // SellForm
             // 

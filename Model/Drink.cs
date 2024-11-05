@@ -26,6 +26,7 @@ namespace Coffee_Kiosk.Model
             get; set;
         }
 
+        // 옵션까지 추가된 총 가격
         public int Price 
         {
             get; set; 
