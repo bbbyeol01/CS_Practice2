@@ -23,7 +23,12 @@ namespace Coffee_Kiosk
         public MenuItem(Drink drink)
         {
             InitializeComponent();
-            this.drink = drink; 
+
+            Lbl_name = drink.Name;
+            Lbl_price = $"{drink.Price.ToString("N0")}원";
+            Lbl_type = drink.Type;
+
+            this.drink = drink;
         }
 
         public string Lbl_name
@@ -31,7 +36,6 @@ namespace Coffee_Kiosk
             get
             {
                return this.lbl_name.Text;
-               
             }
 
             set
@@ -80,7 +84,13 @@ namespace Coffee_Kiosk
             SelectOptionForm selectOptionForm = new SelectOptionForm(drink);
             selectOptionForm.addDrink += AddDrink;
 
-            // selectoptionform이 꺼지면 shadow가 꺼지는 이벤트
+            // shadow 창 누르면 둘 다 꺼짐
+            shadow.Click += (s, args) => { 
+                selectOptionForm.Dispose();
+                shadow.Dispose();
+            };
+
+            // selectoptionform이 꺼지면 shadow도 꺼짐
             selectOptionForm.FormClosed += (s, args) => shadow.Dispose();
             selectOptionForm.Show();
 
@@ -88,8 +98,8 @@ namespace Coffee_Kiosk
 
         private void AddDrink(Drink drink)
         {
-            this.drink = drink;
             addDrink.Invoke(drink);
+            this.drink.Options.Clear();
         }
     }
 }

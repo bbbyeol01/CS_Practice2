@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
+            this.lbl_price = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,19 +42,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(328, 40);
+            this.panel1.Size = new System.Drawing.Size(273, 40);
             this.panel1.TabIndex = 0;
-            // 
-            // lbl_price
-            // 
-            this.lbl_price.AutoSize = true;
-            this.lbl_price.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_price.Location = new System.Drawing.Point(334, 11);
-            this.lbl_price.Name = "lbl_price";
-            this.lbl_price.Size = new System.Drawing.Size(68, 19);
-            this.lbl_price.TabIndex = 1;
-            this.lbl_price.Text = "9,999원";
-            this.lbl_price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_name
             // 
@@ -65,11 +55,35 @@
             this.lbl_name.Text = "음료 이름";
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // lbl_price
+            // 
+            this.lbl_price.AutoSize = true;
+            this.lbl_price.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_price.Location = new System.Drawing.Point(279, 11);
+            this.lbl_price.Name = "lbl_price";
+            this.lbl_price.Size = new System.Drawing.Size(68, 19);
+            this.lbl_price.TabIndex = 1;
+            this.lbl_price.Text = "9,999원";
+            this.lbl_price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Coffee_Kiosk.Properties.Resources.cancel_icon;
+            this.button1.Location = new System.Drawing.Point(440, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AddedDrinkControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_price);
             this.Controls.Add(this.panel1);
             this.Name = "AddedDrinkControl";
@@ -85,5 +99,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_price;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -13,11 +13,23 @@ namespace Coffee_Kiosk.Controls
 {
     public partial class AddedDrinkControl : UserControl
     {
+
         public AddedDrinkControl(Drink drink)
         {
             InitializeComponent();
 
             lbl_name.Text = drink.Name;
+
+            int totalPrice = drink.Price;
+            foreach (var option in drink.Options)
+            {
+                totalPrice += option.Price * option.Quantity;
+            }
+
+            MessageBox.Show(drink.Price.ToString());
+            MessageBox.Show(totalPrice.ToString());
+
+            lbl_price.Text = $"{totalPrice.ToString("N0")}원";
         }
     }
 }

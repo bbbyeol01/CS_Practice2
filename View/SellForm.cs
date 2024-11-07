@@ -106,8 +106,8 @@ namespace Coffee_Kiosk
                 drink.Price = drinkInfo.Price;
 
                 MenuItem menuItem = new MenuItem(drink);
-                menuItem.Lbl_name = drinkInfo.Name;
-                menuItem.Lbl_price = $"{drinkInfo.Price.ToString("N0")}원";
+                //menuItem.Lbl_name = drink.Name;
+                //menuItem.Lbl_price = $"{drink.Price.ToString("N0")}원";
                 menuItem.addDrink += AddDrink;
 
                 // menuItem.Pic_drink = Properties.Resources.americano;
@@ -182,8 +182,6 @@ namespace Coffee_Kiosk
                 panel_list.Controls.Add(addedDrinkControl);
 
                 listYOffset += height;
-            
-                MessageBox.Show(listYOffset.ToString());
 
             //}
 
@@ -201,9 +199,6 @@ namespace Coffee_Kiosk
 
             lbl_quantity.Text = $"{totalCount}개";
             lbl_totalPrice.Text = $"{totalPrice.ToString("N0")}원";
-
-            
-
         }
 
        

@@ -58,6 +58,7 @@
             this.radio_ice.TabStop = true;
             this.radio_ice.Text = "ICE";
             this.radio_ice.UseVisualStyleBackColor = true;
+            this.radio_ice.CheckedChanged += new System.EventHandler(this.radio_ice_CheckedChanged);
             // 
             // DrinkTypeControl
             // 

@@ -37,7 +37,7 @@ namespace Coffee_Kiosk.View
             this.lbl_totalPrice.Text = $"{drink.Price.ToString("N0")}원";
 
             List<string> types = menuRepository.getTypes(drink.Idx);
-            DrinkTypeControl drinkType = new DrinkTypeControl();
+            DrinkTypeControl drinkType = new DrinkTypeControl(drink);
             foreach (string type in types)
             {
                 if(type == "HOT")
@@ -58,11 +58,11 @@ namespace Coffee_Kiosk.View
             foreach(var (name, price) in options)
             {
 
-                DrinkOption option = new DrinkOption();
-                option.Name = name;
-                option.Price = price;
+                DrinkOption drinkOption = new DrinkOption();
+                drinkOption.Name = name;
+                drinkOption.Price = price;
 
-                DrinkOptionControl optionControl = new DrinkOptionControl(option);
+                DrinkOptionControl optionControl = new DrinkOptionControl(drinkOption);
                 optionControl.Name = name;
                 optionControl.optionPlus += OptionPlus;
                 optionControl.optionMinus += OptionMinus;
