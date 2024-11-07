@@ -26,9 +26,6 @@ namespace Coffee_Kiosk.Controls
                 totalPrice += option.Price * option.Quantity;
             }
 
-            MessageBox.Show(drink.Price.ToString());
-            MessageBox.Show(totalPrice.ToString());
-
             lbl_price.Text = $"{totalPrice.ToString("N0")}원";
         }
     }

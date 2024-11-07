@@ -10,10 +10,17 @@ namespace Coffee_Kiosk.Model
     public class Drink
     {
         
-        
         public Drink()
         {
             this.Quantity = 1;
+        }
+
+        public Drink(Drink otherDrink)
+        {
+            Idx = otherDrink.Idx;
+            Name = otherDrink.Name;
+            Price = otherDrink.Price;
+
         }
 
         public int Idx
@@ -34,6 +41,11 @@ namespace Coffee_Kiosk.Model
 
         // HOT/ICE
         public string Type
+        {
+            get; set;
+        }
+
+        public string Category
         {
             get; set;
         }

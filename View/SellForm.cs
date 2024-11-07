@@ -104,6 +104,7 @@ namespace Coffee_Kiosk
                 drink.Idx = drinkInfo.Idx;
                 drink.Name = drinkInfo.Name;
                 drink.Price = drinkInfo.Price;
+                drink.Category = drinkInfo.Category;
 
                 MenuItem menuItem = new MenuItem(drink);
                 //menuItem.Lbl_name = drink.Name;
@@ -176,6 +177,7 @@ namespace Coffee_Kiosk
             //}
             //else
             //{
+                
                 this.drinks.Add(drink);
                 AddedDrinkControl addedDrinkControl = new AddedDrinkControl(drink);
                 addedDrinkControl.Location = new Point(0, listYOffset);
@@ -199,8 +201,31 @@ namespace Coffee_Kiosk
 
             lbl_quantity.Text = $"{totalCount}개";
             lbl_totalPrice.Text = $"{totalPrice.ToString("N0")}원";
+
+            List<DrinkInfo> menuItems = menuRepository.getMenuByCategory(drink.Category);
+            MenuPrint(menuItems);
+
         }
 
-       
+        private void btn_pay_Click(object sender, EventArgs e)
+        {
+            ShadowForm shadow = new ShadowForm();
+            PayForm payForm = new PayForm(drinks);
+
+            // shadow 창 누르면 둘 다 꺼짐
+            shadow.Click += (s, args) => {
+                payForm.Dispose();
+                shadow.Dispose();
+            };
+
+            // selectoptionform이 꺼지면 shadow도 꺼짐
+            payForm.FormClosed += (s, args) => shadow.Dispose();
+
+            shadow.Show();
+            payForm.Show();
+
+  
+
+        }
     }
 }

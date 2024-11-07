@@ -151,9 +151,21 @@
     <Compile Include="Controls\AddedDrinkControl.Designer.cs">
       <DependentUpon>AddedDrinkControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PayButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PayButtonControl.Designer.cs">
+      <DependentUpon>PayButtonControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\DrinkOption.cs" />
     <Compile Include="Model\DrinkInfo.cs" />
     <Compile Include="Model\Drink.cs" />
+    <Compile Include="View\PayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PayForm.Designer.cs">
+      <DependentUpon>PayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ShadowForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DrinkTypeControl.resx">
       <DependentUpon>DrinkTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PayButtonControl.resx">
+      <DependentUpon>PayButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PayForm.resx">
+      <DependentUpon>PayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShadowForm.resx">
       <DependentUpon>ShadowForm.cs</DependentUpon>

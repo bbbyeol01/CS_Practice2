@@ -56,18 +56,20 @@
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(400, 52);
+            this.panel_top.Padding = new System.Windows.Forms.Padding(10);
+            this.panel_top.Size = new System.Drawing.Size(400, 50);
             this.panel_top.TabIndex = 0;
             // 
             // btn_cancel
             // 
             this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
-            this.btn_cancel.Location = new System.Drawing.Point(353, 9);
+            this.btn_cancel.Location = new System.Drawing.Point(355, 10);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(35, 35);
+            this.btn_cancel.Size = new System.Drawing.Size(35, 30);
             this.btn_cancel.TabIndex = 0;
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -78,7 +80,7 @@
             this.panel_info.Controls.Add(this.panel_pic);
             this.panel_info.Controls.Add(this.lbl_name);
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_info.Location = new System.Drawing.Point(0, 52);
+            this.panel_info.Location = new System.Drawing.Point(0, 50);
             this.panel_info.Name = "panel_info";
             this.panel_info.Size = new System.Drawing.Size(400, 140);
             this.panel_info.TabIndex = 1;
@@ -169,7 +171,7 @@
             // panel_type
             // 
             this.panel_type.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_type.Location = new System.Drawing.Point(0, 192);
+            this.panel_type.Location = new System.Drawing.Point(0, 190);
             this.panel_type.Name = "panel_type";
             this.panel_type.Size = new System.Drawing.Size(400, 100);
             this.panel_type.TabIndex = 5;
@@ -177,7 +179,7 @@
             // panel_option
             // 
             this.panel_option.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_option.Location = new System.Drawing.Point(0, 292);
+            this.panel_option.Location = new System.Drawing.Point(0, 290);
             this.panel_option.Name = "panel_option";
             this.panel_option.Size = new System.Drawing.Size(400, 322);
             this.panel_option.TabIndex = 6;

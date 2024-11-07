@@ -13,6 +13,16 @@ namespace Coffee_Kiosk.Model
         {
         }
 
+        public DrinkInfo(int idx, string name, int price, string drinkInfoImage, string category, List<string> types)
+        {
+            Idx = idx;
+            Name = name;
+            Price = price;
+            DrinkInfoImage = drinkInfoImage;
+            Category = category;
+            Types = types;
+        }
+
         public int Idx
         {
             get; set;
@@ -38,13 +48,12 @@ namespace Coffee_Kiosk.Model
             get; set;
         }
 
-        public DrinkInfo(int idx, string name, int price, string drinkInfoImage, List<string> types)
+        public string Category
         {
-            Idx = idx;
-            Name = name;
-            Price = price;
-            DrinkInfoImage = drinkInfoImage;
-            Types = types;
+            get; set;
         }
+
+
+       
     }
 }

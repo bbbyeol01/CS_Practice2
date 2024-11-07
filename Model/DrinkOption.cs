@@ -14,6 +14,14 @@ namespace Coffee_Kiosk.Model
 
         }
 
+        // 복사 생성자
+        public DrinkOption(DrinkOption other)
+        {
+            Name = other.Name;
+            Price = other.Price;
+            Quantity = other.Quantity;
+        }
+
         public string Name
         {
             get; set;

@@ -29,6 +29,7 @@ namespace Coffee_Kiosk
             Lbl_type = drink.Type;
 
             this.drink = drink;
+
         }
 
         public string Lbl_name
@@ -99,7 +100,6 @@ namespace Coffee_Kiosk
         private void AddDrink(Drink drink)
         {
             addDrink.Invoke(drink);
-            this.drink.Options.Clear();
         }
     }
 }

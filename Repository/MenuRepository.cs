@@ -37,9 +37,10 @@ namespace Coffee_Kiosk.Repository
                     string name = reader["name"].ToString();
                     int price = int.Parse(reader["price"].ToString());
                     string image = reader["image"].ToString();
+                    
 
                     // 메뉴에 각 아이템 추가 (타입은 아직 넣지 않음)
-                    menu.Add(new DrinkInfo(idx, name, price, image, new List<string>()));
+                    menu.Add(new DrinkInfo(idx, name, price, image, category, new List<string>()));
                 }
             }
             catch (Exception ex)
