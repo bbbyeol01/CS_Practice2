@@ -9,26 +9,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Coffee_Kiosk.View;
 using Coffee_Kiosk.Model;
+using Coffee_Kiosk.Repository;
+using System.Net;
+using System.IO;
 
 namespace Coffee_Kiosk
 {
     public partial class MenuItem : UserControl
     {
 
-        Drink drink;
-
         public delegate void AddDrinkHandler(Drink drink);
         public event AddDrinkHandler addDrink;
 
-        public MenuItem(Drink drink)
+        DrinkInfo drinkInfo;
+        public MenuItem(int drinkIdx)
         {
             InitializeComponent();
 
-            Lbl_name = drink.Name;
-            Lbl_price = $"{drink.Price.ToString("N0")}원";
-            Lbl_type = drink.Type;
+            MenuRepository menuRepository = new MenuRepository();
 
-            this.drink = drink;
+            drinkInfo = menuRepository.getDrinkInfo(drinkIdx);
+
+            string path = @"https://www.banapresso.com/from_open_storage?ws=fprocess&file=banapresso/menu/";
+
+            using (WebClient webClient = new WebClient())
+            {
+                // URL에서 이미지 데이터를 읽어옵니다
+                byte[] imageData = webClient.DownloadData($"{path}{drinkInfo.DrinkInfoImage}");
+
+                // 이미지 데이터를 메모리 스트림으로 변환하여 Image 객체를 생성합니다
+                using (var stream = new MemoryStream(imageData))
+                {
+                    Pic_drink = Image.FromStream(stream);
+
+                }
+
+            }
+
+            Lbl_name = drinkInfo.Name;
+            Lbl_price = $"{drinkInfo.Price.ToString("N0")}원";
+
 
         }
 
@@ -82,6 +102,13 @@ namespace Coffee_Kiosk
             ShadowForm shadow = new ShadowForm();
             shadow.Show();
 
+            Drink drink = new Drink();
+            drink.Idx = this.drinkInfo.Idx;
+            drink.Name = this.drinkInfo.Name;
+            drink.Price = this.drinkInfo.Price;
+            drink.DrinkImage = Pic_drink;
+            drink.Desc = this.drinkInfo.Description;
+
             SelectOptionForm selectOptionForm = new SelectOptionForm(drink);
             selectOptionForm.addDrink += AddDrink;
 
@@ -101,5 +128,6 @@ namespace Coffee_Kiosk
         {
             addDrink.Invoke(drink);
         }
+
     }
 }

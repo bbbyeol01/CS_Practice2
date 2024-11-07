@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +16,53 @@ namespace Coffee_Kiosk.Repository
     {
         DatabaseManager databaseManager = new DatabaseManager();
 
+        public DrinkInfo getDrinkInfo(int drinkIdx)
+        {
+            DrinkInfo drinkInfo = new DrinkInfo();
+
+            MySqlConnection connection = null;
+            MySqlDataReader reader = null;
+
+            drinkInfo.Idx = drinkIdx;
+
+            try
+            {
+                connection = databaseManager.GetConnection();
+                string query = "SELECT name, price, image, category, `description` FROM menu WHERE idx = @idx";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@idx", drinkIdx);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        drinkInfo.Name = reader["name"].ToString();
+                        drinkInfo.Price = int.Parse(reader["price"].ToString());
+                        drinkInfo.Category = reader["category"].ToString();
+                        drinkInfo.Description = reader["description"].ToString();
+                        drinkInfo.DrinkInfoImage = reader["image"].ToString();
+                    }
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);  // 에러 메시지 출력
+            }
+            finally
+            {
+                reader?.Close();
+            }
+
+            List<string> types = getTypes(drinkIdx);
+            types.Sort();  // 타입 정렬
+            drinkInfo.Types = types;
+
+            return drinkInfo;
+        }
 
         public List<DrinkInfo> getMenuByCategory(string category)
         {
@@ -31,17 +81,18 @@ namespace Coffee_Kiosk.Repository
                 cmd.Parameters.AddWithValue("@category", category);
 
                 reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    int idx = int.Parse(reader["idx"].ToString());
-                    string name = reader["name"].ToString();
-                    int price = int.Parse(reader["price"].ToString());
-                    string image = reader["image"].ToString();
-                    
 
-                    // 메뉴에 각 아이템 추가 (타입은 아직 넣지 않음)
-                    menu.Add(new DrinkInfo(idx, name, price, image, category, new List<string>()));
-                }
+                    while (reader.Read())
+                    {
+                        int idx = int.Parse(reader["idx"].ToString());
+                        string name = reader["name"].ToString();
+                        int price = int.Parse(reader["price"].ToString());
+                        string image = reader["image"].ToString();
+                        // 메뉴에 각 아이템 추가 (타입은 아직 넣지 않음)
+                        menu.Add(new DrinkInfo(idx, name, price, image, category, new List<string>()));
+
+                    }
+
             }
             catch (Exception ex)
             {
@@ -123,6 +174,7 @@ namespace Coffee_Kiosk.Repository
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
             finally
             {

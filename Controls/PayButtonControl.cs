@@ -16,5 +16,15 @@ namespace Coffee_Kiosk.Controls
         {
             InitializeComponent();
         }
+
+        public string Name
+        {
+            get { return lbl_name.Text; }
+            set { lbl_name.Text = value; }
+        }
+        public Image Pic_method
+        {
+            set { this.pic_payMethod.Image = value;  }
+        }
     }
 }

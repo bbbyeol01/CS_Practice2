@@ -27,17 +27,19 @@ namespace Coffee_Kiosk.View
             InitializeComponent();
             this.drink = drink;
             this.selectDrinkPrice = drink.Price;
+            
         }
 
         private void SelectOptionForm_Load(object sender, EventArgs e)
         {
             this.lbl_name.Text = drink.Name;
             this.pic_drink.Image = drink.DrinkImage;
-            this.lbl_desc.Text = menuRepository.getDesc(drink.Idx);
+            this.lbl_desc.Text = drink.Desc;
             this.lbl_totalPrice.Text = $"{drink.Price.ToString("N0")}원";
 
             List<string> types = menuRepository.getTypes(drink.Idx);
             DrinkTypeControl drinkType = new DrinkTypeControl(drink);
+
             foreach (string type in types)
             {
                 if(type == "HOT")

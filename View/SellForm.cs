@@ -100,34 +100,19 @@ namespace Coffee_Kiosk
 
             foreach (DrinkInfo drinkInfo in drinkInfoList)
             {
-                Drink drink = new Drink();
-                drink.Idx = drinkInfo.Idx;
-                drink.Name = drinkInfo.Name;
-                drink.Price = drinkInfo.Price;
-                drink.Category = drinkInfo.Category;
+                //Drink drink = new Drink();
+                //drink.Idx = drinkInfo.Idx;
+                //drink.Name = drinkInfo.Name;
+                //drink.Price = drinkInfo.Price;
+                //drink.Category = drinkInfo.Category;
 
-                MenuItem menuItem = new MenuItem(drink);
+                MenuItem menuItem = new MenuItem(drinkInfo.Idx);
                 //menuItem.Lbl_name = drink.Name;
                 //menuItem.Lbl_price = $"{drink.Price.ToString("N0")}원";
                 menuItem.addDrink += AddDrink;
 
                 // menuItem.Pic_drink = Properties.Resources.americano;
 
-                string path = @"https://www.banapresso.com/from_open_storage?ws=fprocess&file=banapresso/menu/";
-
-                using (WebClient webClient = new WebClient())
-                {
-                    // URL에서 이미지 데이터를 읽어옵니다
-                    byte[] imageData = webClient.DownloadData($"{path}{drinkInfo.DrinkInfoImage}");
-
-                    // 이미지 데이터를 메모리 스트림으로 변환하여 Image 객체를 생성합니다
-                    using (var stream = new MemoryStream(imageData))
-                    {
-                        // 주소값이 같기 때문에 늦게 수정해도 ㄱㅊ
-                        drink.DrinkImage = Image.FromStream(stream);
-                        menuItem.Pic_drink = Image.FromStream(stream);
-                    }
-                }
 
                 foreach (string type in drinkInfo.Types)
                 {
@@ -180,6 +165,7 @@ namespace Coffee_Kiosk
                 
                 this.drinks.Add(drink);
                 AddedDrinkControl addedDrinkControl = new AddedDrinkControl(drink);
+                addedDrinkControl.deleteBtnClick += deleteDrink;
                 addedDrinkControl.Location = new Point(0, listYOffset);
                 panel_list.Controls.Add(addedDrinkControl);
 
@@ -202,9 +188,6 @@ namespace Coffee_Kiosk
             lbl_quantity.Text = $"{totalCount}개";
             lbl_totalPrice.Text = $"{totalPrice.ToString("N0")}원";
 
-            List<DrinkInfo> menuItems = menuRepository.getMenuByCategory(drink.Category);
-            MenuPrint(menuItems);
-
         }
 
         private void btn_pay_Click(object sender, EventArgs e)
@@ -224,8 +207,11 @@ namespace Coffee_Kiosk
             shadow.Show();
             payForm.Show();
 
-  
-
+        }
+        
+        public void deleteDrink(Drink drink)
+        {
+            drinks.Remove(drinks.Find((otherDrink) => drink.Equals(otherDrink)));
         }
     }
 }

@@ -34,9 +34,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbl_price = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_count = new System.Windows.Forms.Label();
+            this.lbl_price = new System.Windows.Forms.Label();
+            this.panel_payMethod = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,7 +81,7 @@
             this.label1.Font = new System.Drawing.Font("Pretendard", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(147, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 32);
+            this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "결제하기";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,26 +96,6 @@
             this.panel3.Size = new System.Drawing.Size(400, 50);
             this.panel3.TabIndex = 2;
             // 
-            // lbl_price
-            // 
-            this.lbl_price.AutoSize = true;
-            this.lbl_price.Font = new System.Drawing.Font("Pretendard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_price.Location = new System.Drawing.Point(200, 13);
-            this.lbl_price.Name = "lbl_price";
-            this.lbl_price.Size = new System.Drawing.Size(87, 25);
-            this.lbl_price.TabIndex = 0;
-            this.lbl_price.Text = "9,999원";
-            this.lbl_price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 180);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(50);
-            this.panel4.Size = new System.Drawing.Size(400, 320);
-            this.panel4.TabIndex = 3;
-            // 
             // lbl_count
             // 
             this.lbl_count.AutoSize = true;
@@ -127,13 +107,33 @@
             this.lbl_count.Text = "총 00개";
             this.lbl_count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_price
+            // 
+            this.lbl_price.AutoSize = true;
+            this.lbl_price.Font = new System.Drawing.Font("Pretendard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_price.Location = new System.Drawing.Point(200, 13);
+            this.lbl_price.Name = "lbl_price";
+            this.lbl_price.Size = new System.Drawing.Size(87, 25);
+            this.lbl_price.TabIndex = 0;
+            this.lbl_price.Text = "9,999원";
+            this.lbl_price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel_payMethod
+            // 
+            this.panel_payMethod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_payMethod.Location = new System.Drawing.Point(0, 180);
+            this.panel_payMethod.Name = "panel_payMethod";
+            this.panel_payMethod.Padding = new System.Windows.Forms.Padding(50);
+            this.panel_payMethod.Size = new System.Drawing.Size(400, 320);
+            this.panel_payMethod.TabIndex = 3;
+            // 
             // PayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(400, 500);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel_payMethod);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_price;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel_payMethod;
         private System.Windows.Forms.Label lbl_count;
     }
 }

@@ -118,13 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="applepay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\applepay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KakaoTalk_20241105_123227905.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="creditcard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\creditcard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KakaoTalk_20241105_170505150_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KakaoTalk_20241105_170505150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="samsungpay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\samsungpay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

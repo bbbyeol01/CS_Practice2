@@ -248,6 +248,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.png" />
+    <None Include="Resources\applepay.png" />
+    <None Include="Resources\creditcard.png" />
     <Content Include="Resources\Entypo-license.txt" />
     <None Include="Resources\iconmonstr-x-mark-lined-240.png" />
     <None Include="Resources\KakaoTalk_20241105_123227905.png" />
@@ -255,6 +257,7 @@
     <None Include="Resources\KakaoTalk_20241105_170126542_01.png" />
     <None Include="Resources\KakaoTalk_20241105_170505150_01.png" />
     <None Include="Resources\KakaoTalk_20241105_170505150.png" />
+    <None Include="Resources\samsungpay.png" />
     <Content Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>

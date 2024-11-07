@@ -62,6 +62,11 @@ namespace Coffee_Kiosk.Model
             get; set;
         }
 
+        public string Desc
+        {
+            get; set;
+        }
+
         public void AddOption(DrinkOption option)
         {
             this.Options.Add(option);
