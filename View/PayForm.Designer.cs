@@ -81,7 +81,7 @@
             this.label1.Font = new System.Drawing.Font("Pretendard", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(147, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 32);
+            this.label1.Size = new System.Drawing.Size(106, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "결제하기";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,18 +100,18 @@
             // 
             this.lbl_count.AutoSize = true;
             this.lbl_count.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_count.Location = new System.Drawing.Point(124, 16);
+            this.lbl_count.Location = new System.Drawing.Point(119, 16);
             this.lbl_count.Name = "lbl_count";
             this.lbl_count.Size = new System.Drawing.Size(63, 19);
             this.lbl_count.TabIndex = 1;
             this.lbl_count.Text = "총 00개";
-            this.lbl_count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_count.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_price
             // 
             this.lbl_price.AutoSize = true;
             this.lbl_price.Font = new System.Drawing.Font("Pretendard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_price.Location = new System.Drawing.Point(200, 13);
+            this.lbl_price.Location = new System.Drawing.Point(195, 13);
             this.lbl_price.Name = "lbl_price";
             this.lbl_price.Size = new System.Drawing.Size(87, 25);
             this.lbl_price.TabIndex = 0;
