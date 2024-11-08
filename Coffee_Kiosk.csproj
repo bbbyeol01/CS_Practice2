@@ -157,9 +157,12 @@
     <Compile Include="Controls\PayButtonControl.Designer.cs">
       <DependentUpon>PayButtonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\MockPaymentProcessor.cs" />
     <Compile Include="Model\DrinkOption.cs" />
     <Compile Include="Model\DrinkInfo.cs" />
     <Compile Include="Model\Drink.cs" />
+    <Compile Include="Model\IPaymentProcessor.cs" />
+    <Compile Include="Model\TransactionResult.cs" />
     <Compile Include="View\PayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +261,8 @@
     <None Include="Resources\KakaoTalk_20241105_170505150_01.png" />
     <None Include="Resources\KakaoTalk_20241105_170505150.png" />
     <None Include="Resources\samsungpay.png" />
+    <None Include="Resources\kakaopay.png" />
+    <None Include="Resources\loading-icon.gif" />
     <Content Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>

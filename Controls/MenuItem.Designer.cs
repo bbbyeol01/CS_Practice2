@@ -69,9 +69,9 @@ namespace Coffee_Kiosk
             // 
             // pic_drink
             // 
-            this.pic_drink.Location = new System.Drawing.Point(20, 25);
+            this.pic_drink.Location = new System.Drawing.Point(20, 28);
             this.pic_drink.Name = "pic_drink";
-            this.pic_drink.Size = new System.Drawing.Size(100, 100);
+            this.pic_drink.Size = new System.Drawing.Size(100, 95);
             this.pic_drink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_drink.TabIndex = 5;
             this.pic_drink.TabStop = false;

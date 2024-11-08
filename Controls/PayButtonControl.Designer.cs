@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_name = new System.Windows.Forms.Label();
             this.pic_payMethod = new System.Windows.Forms.PictureBox();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_payMethod)).BeginInit();
             this.SuspendLayout();
@@ -44,16 +44,6 @@
             this.panel1.Size = new System.Drawing.Size(148, 60);
             this.panel1.TabIndex = 0;
             // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_name.Location = new System.Drawing.Point(154, 19);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(74, 23);
-            this.lbl_name.TabIndex = 1;
-            this.lbl_name.Text = "결제방식";
-            // 
             // pic_payMethod
             // 
             this.pic_payMethod.BackColor = System.Drawing.Color.Transparent;
@@ -63,6 +53,18 @@
             this.pic_payMethod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pic_payMethod.TabIndex = 0;
             this.pic_payMethod.TabStop = false;
+            this.pic_payMethod.Click += new System.EventHandler(this.PayButtonControl_Click);
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_name.Location = new System.Drawing.Point(154, 19);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(74, 23);
+            this.lbl_name.TabIndex = 1;
+            this.lbl_name.Text = "결제방식";
+            this.lbl_name.Click += new System.EventHandler(this.PayButtonControl_Click);
             // 
             // PayButtonControl
             // 
@@ -73,6 +75,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PayButtonControl";
             this.Size = new System.Drawing.Size(300, 60);
+            this.Click += new System.EventHandler(this.PayButtonControl_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_payMethod)).EndInit();

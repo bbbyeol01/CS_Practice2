@@ -17,6 +17,8 @@ namespace Coffee_Kiosk.View
     {
 
         List<Drink> drinks;
+        int totalPrice = 0;
+
         public PayForm(List<Drink> drinks)
         {
             InitializeComponent();
@@ -24,17 +26,16 @@ namespace Coffee_Kiosk.View
 
             lbl_count.Text = $"총 {drinks.Count}개";
 
-            int totalCount = 0;
             foreach (Drink drink in drinks)
             {
-                totalCount += drink.Price * drink.Quantity;
+                totalPrice += drink.Price * drink.Quantity;
                 foreach (DrinkOption drinkOption in drink.Options)
                 {
-                    totalCount += drinkOption.Price * drinkOption.Quantity;
+                    totalPrice += drinkOption.Price * drinkOption.Quantity;
                 }
             }
 
-            lbl_price.Text = $"{totalCount.ToString("N0")}원";
+            lbl_price.Text = $"{totalPrice.ToString("N0")}원";
 
             PayMethod();
 
@@ -48,31 +49,31 @@ namespace Coffee_Kiosk.View
         private void PayMethod()
         {
 
-            PayButtonControl creditCard = new PayButtonControl();
+            PayButtonControl creditCard = new PayButtonControl(totalPrice);
             creditCard.Pic_method = Properties.Resources.creditcard;
             creditCard.BackColor = Color.FromArgb(30, 75, 198);
             creditCard.ForeColor = Color.White;
             creditCard.Name = "신용카드";
-            creditCard.Location = new Point(50, 50);
+            creditCard.Location = new Point(50, 30);
             panel_payMethod.Controls.Add(creditCard);
 
 
-            PayButtonControl applepay = new PayButtonControl();
+            PayButtonControl applepay = new PayButtonControl(totalPrice);
             applepay.Pic_method = Properties.Resources.applepay;
             applepay.BackColor = Color.Black;
             applepay.ForeColor = Color.White;
             applepay.Name = "애플페이";
-            applepay.Location = new Point(50, 120);
+            applepay.Location = new Point(50, 100);
             panel_payMethod.Controls.Add(applepay);
 
 
-            //PayButtonControl samsungpay = new PayButtonControl();
-            //samsungpay.BackColor = Color.FromArgb(30, 75, 198);
-            //samsungpay.ForeColor = Color.White;
-            //samsungpay.Pic_method = Properties.Resources.samsungpay;
-            //samsungpay.Name = "삼성페이";
-            //samsungpay.Location = new Point(50, 140);
-            //panel_payMethod.Controls.Add(samsungpay);
+            PayButtonControl kakaopay = new PayButtonControl(totalPrice);
+            kakaopay.Pic_method = Properties.Resources.kakaopay;
+            kakaopay.BackColor = Color.FromArgb(254, 229, 0);
+            kakaopay.ForeColor = Color.Black;
+            kakaopay.Name = "카카오페이";
+            kakaopay.Location = new Point(50, 170);
+            panel_payMethod.Controls.Add(kakaopay);
 
 
         }
