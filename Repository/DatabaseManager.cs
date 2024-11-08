@@ -5,21 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Coffee_Kiosk.Repository
 {
     public class DatabaseManager
     {
-        private readonly string _server = "localhost";
-        private readonly int _port = 3308;
-        private readonly string _database = "coffeeshop";
-        private readonly string _id = "root";
-        private readonly string _pw = "abcde12345";
         private MySqlConnection _connection = null;
         private string _connectionAddress = "";
 
         public DatabaseManager() {
-          _connectionAddress = $"Server={_server};Port={_port};Database={_database};Uid={_id};Pwd={_pw}";
+          _connectionAddress = ConfigurationManager.AppSettings["DB_CONNECT_STRING"];
         }
 
         public  MySqlConnection GetConnection()
