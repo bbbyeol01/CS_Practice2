@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coffee_Kiosk.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Coffee_Kiosk.Model
         public TransactionResult ProcessPayment(int amount)
         {
 
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
             // 결제가 성공한 것으로 가정한 결과 반환
             return new TransactionResult

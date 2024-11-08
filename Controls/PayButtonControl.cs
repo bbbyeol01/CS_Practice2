@@ -1,4 +1,5 @@
 ﻿using Coffee_Kiosk.Model;
+using Coffee_Kiosk.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -41,11 +43,31 @@ namespace Coffee_Kiosk.Controls
 
             if (result.IsSuccess)
             {
-                MessageBox.Show($"결제 성공: {result.ApprovedAmount}원이 승인되었습니다.");
+                PayResultForm payResultForm = new PayResultForm("success");
+                ShadowForm shadow = new ShadowForm();
+
+                shadow.Show();
+                payResultForm.FormClosed += (s, args) => { shadow.Dispose(); };
+                payResultForm.ShowDialog();
+
+                Thread.Sleep(3000);
+
+                payResultForm.Close();
+
+
             }
             else
             {
-                MessageBox.Show($"결제 실패: {result.ErrorMessage}");
+                PayResultForm payResultForm = new PayResultForm("fail");
+                ShadowForm shadow = new ShadowForm();
+
+                shadow.Show();
+                payResultForm.FormClosed += (s, args) => { shadow.Dispose(); };
+                payResultForm.ShowDialog();
+
+                Thread.Sleep(3000);
+
+                payResultForm.Close();
             }
         }
     }

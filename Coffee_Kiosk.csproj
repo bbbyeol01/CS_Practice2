@@ -163,6 +163,12 @@
     <Compile Include="Model\Drink.cs" />
     <Compile Include="Model\IPaymentProcessor.cs" />
     <Compile Include="Model\TransactionResult.cs" />
+    <Compile Include="View\PayResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PayResultForm.Designer.cs">
+      <DependentUpon>PayResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <EmbeddedResource Include="Controls\PayButtonControl.resx">
       <DependentUpon>PayButtonControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PayResultForm.resx">
+      <DependentUpon>PayResultForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PayForm.resx">
       <DependentUpon>PayForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +262,7 @@
     <None Include="Resources\cancel.png" />
     <None Include="Resources\applepay.png" />
     <None Include="Resources\creditcard.png" />
+    <None Include="Resources\check-icon.png" />
     <Content Include="Resources\Entypo-license.txt" />
     <None Include="Resources\iconmonstr-x-mark-lined-240.png" />
     <None Include="Resources\KakaoTalk_20241105_123227905.png" />
@@ -263,6 +273,7 @@
     <None Include="Resources\samsungpay.png" />
     <None Include="Resources\kakaopay.png" />
     <None Include="Resources\loading-icon.gif" />
+    <None Include="Resources\forbidden-icon.png" />
     <Content Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>
