@@ -86,6 +86,7 @@
             this.btn_dessert.TabIndex = 4;
             this.btn_dessert.Text = "디저트";
             this.btn_dessert.UseVisualStyleBackColor = false;
+            this.btn_dessert.Click += new System.EventHandler(this.btn_dessert_Click);
             // 
             // btn_smootie
             // 

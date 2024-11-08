@@ -35,10 +35,10 @@ namespace Coffee_Kiosk.Controls
 
         private void PayButtonControl_Click(object sender, EventArgs e)
         {
-            // 가상 결제 프로세서 객체 생성
+            // 가상 결제 객체
             IPaymentProcessor paymentProcessor = new MockPaymentProcessor();
 
-            // 결제 요청을 시도하고 결과를 받음
+            // 결제 요청 -> 결과를 받음 지금은 무조건 성공
             TransactionResult result = paymentProcessor.ProcessPayment(price);
 
             if (result.IsSuccess)
@@ -53,7 +53,6 @@ namespace Coffee_Kiosk.Controls
                 Thread.Sleep(3000);
 
                 payResultForm.Close();
-
 
             }
             else

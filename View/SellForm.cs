@@ -92,6 +92,13 @@ namespace Coffee_Kiosk
             MenuPrint(menuItems);
         }
 
+        private void btn_dessert_Click(object sender, EventArgs e)
+        {
+            List<DrinkInfo> menuItems = menuRepository.getMenuByCategory("dessert");
+            SelectedMenuBtn(sender as Button);
+            MenuPrint(menuItems);
+        }
+
         private void MenuPrint(List<DrinkInfo> drinkInfoList)
         {
             panel_menu.Controls.Clear();
@@ -213,5 +220,7 @@ namespace Coffee_Kiosk
         {
             drinks.Remove(drinks.Find((otherDrink) => drink.Equals(otherDrink)));
         }
+
+       
     }
 }
