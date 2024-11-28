@@ -130,6 +130,8 @@ namespace Coffee_Kiosk.View
 
 ### 아키텍쳐
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/fc1accaa-e03e-423b-aac4-130ac0eb1480">
+
+
 1. window에서 애플리케이션이 실행됩니다.
 2. <code>Application.Run()</code>으로 메시지 루프를 실행합니다.
 3. 메시지 루프는 Controls(button, label, 사용자 정의 controls 등)가 발생시킨 이벤트를 큐에 저장했다가, 처리할 이벤트 핸들러로 라우팅합니다.
