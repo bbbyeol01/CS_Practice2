@@ -34,40 +34,50 @@ C#으로 구현한 카페 키오스크입니다. WinForm을 사용하여 윈도�
 ```csharp
 // MenuItem
 
-public delegate void AddDrinkHandler(Drink drink);
-public event AddDrinkHandler addDrink;
+namespace Coffee_Kiosk
+{
+    public partial class MenuItem : UserControl
+    {
+
+        public delegate void AddDrinkHandler(Drink drink);
+        public event AddDrinkHandler addDrink;
 
 // ...
 
-private void MenuItem_Click(object sender, EventArgs e) {
-    ShadowForm shadow = new ShadowForm();
-    shadow.Show();
 
-    Drink drink = new Drink();
-    drink.Idx = this.drinkInfo.Idx;
-    drink.Name = this.drinkInfo.Name;
-    drink.Price = this.drinkInfo.Price;
-    drink.DrinkImage = Pic_drink;
-    drink.Desc = this.drinkInfo.Description;
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            ShadowForm shadow = new ShadowForm();
+            shadow.Show();
 
-    SelectOptionForm selectOptionForm = new SelectOptionForm(drink);
-    selectOptionForm.addDrink += AddDrink;
+            Drink drink = new Drink();
+            drink.Idx = this.drinkInfo.Idx;
+            drink.Name = this.drinkInfo.Name;
+            drink.Price = this.drinkInfo.Price;
+            drink.DrinkImage = Pic_drink;
+            drink.Desc = this.drinkInfo.Description;
 
-    // shadow 창 누르면 둘 다 꺼짐
-    shadow.Click += (s, args) => { 
-        selectOptionForm.Dispose();
-        shadow.Dispose();
-    };
+            SelectOptionForm selectOptionForm = new SelectOptionForm(drink);
+            selectOptionForm.addDrink += AddDrink;
 
-    // selectoptionform이 꺼지면 shadow도 꺼짐
-    selectOptionForm.FormClosed += (s, args) => shadow.Dispose();
-    selectOptionForm.Show();
+            // shadow 창 누르면 둘 다 꺼짐
+            shadow.Click += (s, args) => { 
+                selectOptionForm.Dispose();
+                shadow.Dispose();
+            };
 
-}
+            // selectoptionform이 꺼지면 shadow도 꺼짐
+            selectOptionForm.FormClosed += (s, args) => shadow.Dispose();
+            selectOptionForm.Show();
 
-private void AddDrink(Drink drink)
-{
-    addDrink.Invoke(drink);
+        }
+
+        private void AddDrink(Drink drink)
+        {
+            addDrink.Invoke(drink);
+        }
+
+    }
 }
 ```
 
